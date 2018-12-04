@@ -327,8 +327,14 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T10_TicketsAn = (gcnew System::Windows::Forms::TabPage());
 			this->T10_l1 = (gcnew System::Windows::Forms::Label());
 			this->T11_TicketReview = (gcnew System::Windows::Forms::TabPage());
-			this->T11_TLP = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->T11_TNlabel = (gcnew System::Windows::Forms::Label());
+			this->T11_l9 = (gcnew System::Windows::Forms::Label());
+			this->T11_TLP = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->T11_UrgencyCB = (gcnew System::Windows::Forms::ComboBox());
+			this->T11_Desc = (gcnew System::Windows::Forms::Label());
+			this->T11_Subject = (gcnew System::Windows::Forms::Label());
+			this->T11_Date = (gcnew System::Windows::Forms::Label());
 			this->T11_l1 = (gcnew System::Windows::Forms::Label());
 			this->T11_l2 = (gcnew System::Windows::Forms::Label());
 			this->T11_l3 = (gcnew System::Windows::Forms::Label());
@@ -337,28 +343,22 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l6 = (gcnew System::Windows::Forms::Label());
 			this->T11_l7 = (gcnew System::Windows::Forms::Label());
 			this->T11_l8 = (gcnew System::Windows::Forms::Label());
-			this->T11_l9 = (gcnew System::Windows::Forms::Label());
-			this->T11_TNlabel = (gcnew System::Windows::Forms::Label());
-			this->T11_Date = (gcnew System::Windows::Forms::Label());
-			this->T11_Subject = (gcnew System::Windows::Forms::Label());
-			this->T11_Desc = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->T11_PN = (gcnew System::Windows::Forms::Label());
+			this->T11_Department = (gcnew System::Windows::Forms::Label());
+			this->T11_EMAIL = (gcnew System::Windows::Forms::Label());
+			this->T11_ID = (gcnew System::Windows::Forms::Label());
+			this->T11_LN = (gcnew System::Windows::Forms::Label());
+			this->T11_FN = (gcnew System::Windows::Forms::Label());
 			this->T11_l10 = (gcnew System::Windows::Forms::Label());
 			this->T11_l11 = (gcnew System::Windows::Forms::Label());
 			this->T11_l12 = (gcnew System::Windows::Forms::Label());
 			this->T11_l13 = (gcnew System::Windows::Forms::Label());
 			this->T11_l14 = (gcnew System::Windows::Forms::Label());
 			this->T11_l15 = (gcnew System::Windows::Forms::Label());
-			this->T11_FN = (gcnew System::Windows::Forms::Label());
-			this->T11_LN = (gcnew System::Windows::Forms::Label());
-			this->T11_ID = (gcnew System::Windows::Forms::Label());
-			this->T11_EMAIL = (gcnew System::Windows::Forms::Label());
-			this->T11_Department = (gcnew System::Windows::Forms::Label());
-			this->T11_PN = (gcnew System::Windows::Forms::Label());
-			this->T11_AT = (gcnew System::Windows::Forms::Label());
 			this->T11_InCharge = (gcnew System::Windows::Forms::Label());
+			this->T11_AT = (gcnew System::Windows::Forms::Label());
 			this->T11_StatusCB = (gcnew System::Windows::Forms::ComboBox());
-			this->T11_UrgencyCB = (gcnew System::Windows::Forms::ComboBox());
 			this->ShortBox->SuspendLayout();
 			this->TabCon->SuspendLayout();
 			this->T1WelTab->SuspendLayout();
@@ -376,8 +376,8 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T9_P->SuspendLayout();
 			this->T10_TicketsAn->SuspendLayout();
 			this->T11_TicketReview->SuspendLayout();
-			this->T11_TLP->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->T11_TLP->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -1341,6 +1341,48 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_TicketReview->Size = System::Drawing::Size(730, 411);
 			this->T11_TicketReview->TabIndex = 10;
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::Tan;
+			this->panel1->Controls->Add(this->T11_TNlabel);
+			this->panel1->Controls->Add(this->T11_l9);
+			this->panel1->Location = System::Drawing::Point(94, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(568, 25);
+			this->panel1->TabIndex = 1;
+			// 
+			// T11_TNlabel
+			// 
+			this->T11_TNlabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_TNlabel->AutoSize = true;
+			this->T11_TNlabel->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->T11_TNlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->T11_TNlabel->Location = System::Drawing::Point(289, 3);
+			this->T11_TNlabel->Name = L"T11_TNlabel";
+			this->T11_TNlabel->Size = System::Drawing::Size(20, 22);
+			this->T11_TNlabel->TabIndex = 9;
+			this->T11_TNlabel->Text = L"0";
+			this->T11_TNlabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_l9
+			// 
+			this->T11_l9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_l9->AutoSize = true;
+			this->T11_l9->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->T11_l9->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->T11_l9->Location = System::Drawing::Point(123, 3);
+			this->T11_l9->Name = L"T11_l9";
+			this->T11_l9->Size = System::Drawing::Size(151, 22);
+			this->T11_l9->TabIndex = 8;
+			this->T11_l9->Text = L"Submission Date:";
+			this->T11_l9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// T11_TLP
 			// 
 			this->T11_TLP->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
@@ -1379,15 +1421,57 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_TLP->Size = System::Drawing::Size(567, 388);
 			this->T11_TLP->TabIndex = 0;
 			// 
-			// panel1
+			// T11_UrgencyCB
 			// 
-			this->panel1->BackColor = System::Drawing::Color::Tan;
-			this->panel1->Controls->Add(this->T11_TNlabel);
-			this->panel1->Controls->Add(this->T11_l9);
-			this->panel1->Location = System::Drawing::Point(97, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(568, 25);
-			this->panel1->TabIndex = 1;
+			this->T11_UrgencyCB->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_UrgencyCB->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->T11_UrgencyCB->FormattingEnabled = true;
+			this->T11_UrgencyCB->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Low", L"Medium", L"High", L"Unknown" });
+			this->T11_UrgencyCB->Location = System::Drawing::Point(163, 325);
+			this->T11_UrgencyCB->Margin = System::Windows::Forms::Padding(0);
+			this->T11_UrgencyCB->Name = L"T11_UrgencyCB";
+			this->T11_UrgencyCB->Size = System::Drawing::Size(402, 27);
+			this->T11_UrgencyCB->TabIndex = 15;
+			// 
+			// T11_Desc
+			// 
+			this->T11_Desc->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_Desc->AutoSize = true;
+			this->T11_Desc->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_Desc->Location = System::Drawing::Point(166, 54);
+			this->T11_Desc->Name = L"T11_Desc";
+			this->T11_Desc->Size = System::Drawing::Size(396, 47);
+			this->T11_Desc->TabIndex = 10;
+			this->T11_Desc->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_Subject
+			// 
+			this->T11_Subject->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_Subject->AutoSize = true;
+			this->T11_Subject->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_Subject->Location = System::Drawing::Point(166, 28);
+			this->T11_Subject->Name = L"T11_Subject";
+			this->T11_Subject->Size = System::Drawing::Size(396, 24);
+			this->T11_Subject->TabIndex = 9;
+			this->T11_Subject->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_Date
+			// 
+			this->T11_Date->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_Date->AutoSize = true;
+			this->T11_Date->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_Date->Location = System::Drawing::Point(166, 2);
+			this->T11_Date->Name = L"T11_Date";
+			this->T11_Date->Size = System::Drawing::Size(396, 24);
+			this->T11_Date->TabIndex = 8;
+			this->T11_Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_l1
 			// 
@@ -1493,77 +1577,6 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l8->Text = L"Technician in charge";
 			this->T11_l8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// T11_l9
-			// 
-			this->T11_l9->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_l9->AutoSize = true;
-			this->T11_l9->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->T11_l9->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->T11_l9->Location = System::Drawing::Point(123, 3);
-			this->T11_l9->Name = L"T11_l9";
-			this->T11_l9->Size = System::Drawing::Size(151, 22);
-			this->T11_l9->TabIndex = 8;
-			this->T11_l9->Text = L"Submission Date:";
-			this->T11_l9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_TNlabel
-			// 
-			this->T11_TNlabel->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_TNlabel->AutoSize = true;
-			this->T11_TNlabel->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->T11_TNlabel->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->T11_TNlabel->Location = System::Drawing::Point(289, 3);
-			this->T11_TNlabel->Name = L"T11_TNlabel";
-			this->T11_TNlabel->Size = System::Drawing::Size(20, 22);
-			this->T11_TNlabel->TabIndex = 9;
-			this->T11_TNlabel->Text = L"0";
-			this->T11_TNlabel->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_Date
-			// 
-			this->T11_Date->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_Date->AutoSize = true;
-			this->T11_Date->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_Date->Location = System::Drawing::Point(166, 2);
-			this->T11_Date->Name = L"T11_Date";
-			this->T11_Date->Size = System::Drawing::Size(396, 24);
-			this->T11_Date->TabIndex = 8;
-			this->T11_Date->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_Subject
-			// 
-			this->T11_Subject->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_Subject->AutoSize = true;
-			this->T11_Subject->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_Subject->Location = System::Drawing::Point(166, 28);
-			this->T11_Subject->Name = L"T11_Subject";
-			this->T11_Subject->Size = System::Drawing::Size(396, 24);
-			this->T11_Subject->TabIndex = 9;
-			this->T11_Subject->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_Desc
-			// 
-			this->T11_Desc->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_Desc->AutoSize = true;
-			this->T11_Desc->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_Desc->Location = System::Drawing::Point(166, 54);
-			this->T11_Desc->Name = L"T11_Desc";
-			this->T11_Desc->Size = System::Drawing::Size(396, 47);
-			this->T11_Desc->TabIndex = 10;
-			this->T11_Desc->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
 			// tableLayoutPanel1
 			// 
 			this->tableLayoutPanel1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -1598,6 +1611,84 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 23)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(396, 139);
 			this->tableLayoutPanel1->TabIndex = 11;
+			// 
+			// T11_PN
+			// 
+			this->T11_PN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_PN->AutoSize = true;
+			this->T11_PN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_PN->Location = System::Drawing::Point(201, 120);
+			this->T11_PN->Name = L"T11_PN";
+			this->T11_PN->Size = System::Drawing::Size(191, 23);
+			this->T11_PN->TabIndex = 22;
+			this->T11_PN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_Department
+			// 
+			this->T11_Department->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_Department->AutoSize = true;
+			this->T11_Department->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_Department->Location = System::Drawing::Point(201, 97);
+			this->T11_Department->Name = L"T11_Department";
+			this->T11_Department->Size = System::Drawing::Size(191, 22);
+			this->T11_Department->TabIndex = 21;
+			this->T11_Department->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_EMAIL
+			// 
+			this->T11_EMAIL->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_EMAIL->AutoSize = true;
+			this->T11_EMAIL->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_EMAIL->Location = System::Drawing::Point(201, 73);
+			this->T11_EMAIL->Name = L"T11_EMAIL";
+			this->T11_EMAIL->Size = System::Drawing::Size(191, 23);
+			this->T11_EMAIL->TabIndex = 20;
+			this->T11_EMAIL->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_ID
+			// 
+			this->T11_ID->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_ID->AutoSize = true;
+			this->T11_ID->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_ID->Location = System::Drawing::Point(201, 49);
+			this->T11_ID->Name = L"T11_ID";
+			this->T11_ID->Size = System::Drawing::Size(191, 23);
+			this->T11_ID->TabIndex = 19;
+			this->T11_ID->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_LN
+			// 
+			this->T11_LN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_LN->AutoSize = true;
+			this->T11_LN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_LN->Location = System::Drawing::Point(201, 25);
+			this->T11_LN->Name = L"T11_LN";
+			this->T11_LN->Size = System::Drawing::Size(191, 23);
+			this->T11_LN->TabIndex = 18;
+			this->T11_LN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// T11_FN
+			// 
+			this->T11_FN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_FN->AutoSize = true;
+			this->T11_FN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_FN->Location = System::Drawing::Point(201, 1);
+			this->T11_FN->Name = L"T11_FN";
+			this->T11_FN->Size = System::Drawing::Size(191, 23);
+			this->T11_FN->TabIndex = 12;
+			this->T11_FN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_l10
 			// 
@@ -1677,83 +1768,18 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l15->Text = L"Phone number:";
 			this->T11_l15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// T11_FN
+			// T11_InCharge
 			// 
-			this->T11_FN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->T11_InCharge->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_FN->AutoSize = true;
-			this->T11_FN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_FN->Location = System::Drawing::Point(201, 1);
-			this->T11_FN->Name = L"T11_FN";
-			this->T11_FN->Size = System::Drawing::Size(191, 23);
-			this->T11_FN->TabIndex = 12;
-			this->T11_FN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_LN
-			// 
-			this->T11_LN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_LN->AutoSize = true;
-			this->T11_LN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_LN->Location = System::Drawing::Point(201, 25);
-			this->T11_LN->Name = L"T11_LN";
-			this->T11_LN->Size = System::Drawing::Size(191, 23);
-			this->T11_LN->TabIndex = 18;
-			this->T11_LN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_ID
-			// 
-			this->T11_ID->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_ID->AutoSize = true;
-			this->T11_ID->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_ID->Location = System::Drawing::Point(201, 49);
-			this->T11_ID->Name = L"T11_ID";
-			this->T11_ID->Size = System::Drawing::Size(191, 23);
-			this->T11_ID->TabIndex = 19;
-			this->T11_ID->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_EMAIL
-			// 
-			this->T11_EMAIL->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_EMAIL->AutoSize = true;
-			this->T11_EMAIL->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_EMAIL->Location = System::Drawing::Point(201, 73);
-			this->T11_EMAIL->Name = L"T11_EMAIL";
-			this->T11_EMAIL->Size = System::Drawing::Size(191, 23);
-			this->T11_EMAIL->TabIndex = 20;
-			this->T11_EMAIL->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_Department
-			// 
-			this->T11_Department->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_Department->AutoSize = true;
-			this->T11_Department->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_Department->Location = System::Drawing::Point(201, 97);
-			this->T11_Department->Name = L"T11_Department";
-			this->T11_Department->Size = System::Drawing::Size(191, 22);
-			this->T11_Department->TabIndex = 21;
-			this->T11_Department->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_PN
-			// 
-			this->T11_PN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_PN->AutoSize = true;
-			this->T11_PN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_PN->Location = System::Drawing::Point(201, 120);
-			this->T11_PN->Name = L"T11_PN";
-			this->T11_PN->Size = System::Drawing::Size(191, 23);
-			this->T11_PN->TabIndex = 22;
-			this->T11_PN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->T11_InCharge->AutoSize = true;
+			this->T11_InCharge->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->T11_InCharge->Location = System::Drawing::Point(166, 355);
+			this->T11_InCharge->Name = L"T11_InCharge";
+			this->T11_InCharge->Size = System::Drawing::Size(396, 31);
+			this->T11_InCharge->TabIndex = 13;
+			this->T11_InCharge->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_AT
 			// 
@@ -1767,19 +1793,6 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_AT->Size = System::Drawing::Size(396, 44);
 			this->T11_AT->TabIndex = 12;
 			this->T11_AT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_InCharge
-			// 
-			this->T11_InCharge->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_InCharge->AutoSize = true;
-			this->T11_InCharge->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_InCharge->Location = System::Drawing::Point(166, 355);
-			this->T11_InCharge->Name = L"T11_InCharge";
-			this->T11_InCharge->Size = System::Drawing::Size(396, 31);
-			this->T11_InCharge->TabIndex = 13;
-			this->T11_InCharge->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_StatusCB
 			// 
@@ -1796,19 +1809,6 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_StatusCB->Name = L"T11_StatusCB";
 			this->T11_StatusCB->Size = System::Drawing::Size(402, 27);
 			this->T11_StatusCB->TabIndex = 14;
-			// 
-			// T11_UrgencyCB
-			// 
-			this->T11_UrgencyCB->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_UrgencyCB->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->T11_UrgencyCB->FormattingEnabled = true;
-			this->T11_UrgencyCB->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Low", L"Medium", L"High", L"Unknown" });
-			this->T11_UrgencyCB->Location = System::Drawing::Point(163, 325);
-			this->T11_UrgencyCB->Margin = System::Windows::Forms::Padding(0);
-			this->T11_UrgencyCB->Name = L"T11_UrgencyCB";
-			this->T11_UrgencyCB->Size = System::Drawing::Size(402, 27);
-			this->T11_UrgencyCB->TabIndex = 15;
 			// 
 			// MyForm
 			// 
@@ -1854,10 +1854,10 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T10_TicketsAn->ResumeLayout(false);
 			this->T10_TicketsAn->PerformLayout();
 			this->T11_TicketReview->ResumeLayout(false);
-			this->T11_TLP->ResumeLayout(false);
-			this->T11_TLP->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->T11_TLP->ResumeLayout(false);
+			this->T11_TLP->PerformLayout();
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->ResumeLayout(false);
