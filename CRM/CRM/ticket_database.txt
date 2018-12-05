@@ -1,104 +1,119 @@
 ------------------------------------------
 ID:203716576
 Subject:Courses
-Status:new
-Date:24-11-2018 
-Description:big big problem
+Status:Closed
+Date:04-12-2018 
+Description:adsdasd
+Ticket Number:1
+Urgency:Unknown
+Technician Notice:easy problem
 ------------------------------------------
 ID:203716576
 Subject:Courses
 Status:new
-Date:24-11-2018 
-Description:big big problem
+Date:04-12-2018 
+Description:adsdasd
+Ticket Number:2
+Urgency:Escalation
+Technician Notice:empty
 ------------------------------------------
 ID:203716576
 Subject:Courses
 Status:new
-Date:24-11-2018 
-Description:big big problem
+Date:04-12-2018 
+Description:adsdasd
+Ticket Number:3
+Urgency:Escalation
+Technician Notice:empty
 ------------------------------------------
 ID:203716576
 Subject:Courses
 Status:new
-Date:24-11-2018 
-Description:big big problem
+Date:04-12-2018 
+Description:adsdasd
+Ticket Number:4
+Urgency:In_Progress
+Technician Notice:i solved the problem
 ------------------------------------------
 ID:203716576
 Subject:Courses
-Status:new
-Date:24-11-2018 
-Description:big big problem
+Status:In_Progress
+Date:04-12-2018 
+Description:adsdasd
+Ticket Number:5
+Urgency:In_Progress
+Technician Notice:empty
 ------------------------------------------
-ID:203716576
+ID:324201600
 Subject:Grades
 Status:new
-Date:24-11-2018 
-Description:small problem
+Date:05-12-2018 
+Description:problem with c++ grade
+Ticket Number:6
+Urgency:In_Progress
+Technician Notice:empty
 ------------------------------------------
-ID:203716576
-Subject:Maintenance_problem
+ID:333168647
+Subject:Grades
 Status:new
-Date:24-11-2018 
-Description:small or big
+Date:05-12-2018 
+Description:problem with python grade
+Ticket Number:7
+Urgency:In_Progress
+Technician Notice:empty
 ------------------------------------------
-ID:203716576
-Subject:Courses
+ID:954718942
+Subject:Maintenance
 Status:new
-Date:24-11-2018 
-Description:BIGBIGPROBLEM
+Date:05-12-2018 
+Description:broken keyboard in 324 class
+Ticket Number:8
+Urgency:In_Progress
+Technician Notice:empty
 ------------------------------------------
-ID:203716576
-Subject:Maintenance_problem
+ID:213841212
+Subject:Maintenance
 Status:new
-Date:24-11-2018 
-Description:small problem
+Date:05-12-2018 
+Description:broken table in class 554
+Ticket Number:9
+Urgency:In_Progress
+Technician Notice:empty
 ------------------------------------------
-ID:203716576
+ID:770149711
 Subject:Other
 Status:new
-Date:24-11-2018 
-Description:asdfg
+Date:05-12-2018 
+Description:other problem
+Ticket Number:10
+Urgency:Closed
+Technician Notice:empty
 ------------------------------------------
-ID:324201600
+ID:205490170
+Subject:Other
+Status:Closed
+Date:05-12-2018 
+Description:other problem #2
+Ticket Number:11
+Urgency:Closed
+Technician Notice:empty
+------------------------------------------
+ID:203716576
 Subject:Grades
 Status:new
-Date:25-11-2018 
-Description:asdjkhfjhfsdjhkfjhksfdjkh
+Date:05-12-2018 
+Description:problem with c grade
+Ticket Number:12
+Urgency:Closed
+Technician Notice:empty
 ------------------------------------------
-ID:324201600
-Subject:Maintenance_problem
+ID:203716576
+Subject:Maintenance
 Status:new
-Date:25-11-2018 
-Description:ajkshdkjahsdhjkas
-kdfgkjldfjklgdkjlsfg
-kldfgkkljdfgjklfdg
+Date:05-12-2018 
+Description:speaker broken in class 432
+Ticket Number:13
+Urgency:Closed
+Technician Notice:empty
 
-------------------------------------------
-ID:324201600
-Subject:Grades
-Status:new
-Date:26-11-2018 
-Description:sadasdsadasdfds
-ksfmdkldfgkl
-------------------------------------------
-ID:324201600
-Subject:Grades
-Status:new
-Date:24-11-2018 
-Description:asdasdfdsfds\fdg
-dfgdfgdfg
-gfdgdfgfd
-------------------------------------------
-ID:324201600
-Subject:Courses
-Status:new
-Date:25-11-2018 
-Description:dsfsdf
-adfssadf
-------------------------------------------
-ID:324201600
-Subject:Courses
-Status:new
-Date:25-11-2017 
-Description:sdffsdfdsdfsdfs
-sdffsd
+

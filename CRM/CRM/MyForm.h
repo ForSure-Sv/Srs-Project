@@ -26,39 +26,55 @@ namespace CRM {
 		MyForm(void)
 		{
 			InitializeComponent();
-			m_UserTable = gcnew DataTable();
-			m_UserTable->Columns->Add("Date",DateTime::typeid);
-			m_UserTable->Columns->Add("Subject", String::typeid);
-			m_UserTable->Columns->Add("Status", String::typeid);
-			m_UserTable->Columns->Add("Ticket Number", Int32::typeid);
-			T6_DGV->BorderStyle = BorderStyle::None;
-			T6_DGV->AlternatingRowsDefaultCellStyle->BackColor = Color::FromArgb(238, 239, 249);
-			T6_DGV->CellBorderStyle = DataGridViewCellBorderStyle::SingleHorizontal;
-			T6_DGV->DefaultCellStyle->SelectionBackColor = Color::DarkTurquoise;
-			T6_DGV->DefaultCellStyle->SelectionForeColor = Color::WhiteSmoke;
-			T6_DGV->BackgroundColor = Color::White;
+			SetUpTables();
 
-			T6_DGV->EnableHeadersVisualStyles = false;
-			T6_DGV->ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle::None;
-			T6_DGV->ColumnHeadersDefaultCellStyle->BackColor = Color::FromArgb(20, 25, 72);
-			T6_DGV->ColumnHeadersDefaultCellStyle->ForeColor = Color::White;
-
-			m_TecTable = gcnew DataTable();
-			m_TecTable->Columns->Add("Date", DateTime::typeid);
-			m_TecTable->Columns->Add("Subject", String::typeid);
-			m_TecTable->Columns->Add("User Name", String::typeid);
-			m_TecTable->Columns->Add("ID", Int32::typeid);
-			m_TecTable->Columns->Add("Status", String::typeid);
-			m_TecTable->Columns->Add("Urgency", String::typeid);
-			m_TecTable->Columns->Add("Ticket Number", Int32::typeid);
-
-			T6_DGV->DataSource = m_UserTable;
-			T9_DGV->DataSource = m_TecTable;
 			//
 			//TODO: Add the constructor code here
 			//
 		}
+	private: void SetUpTables()
+	{
+		m_UserTable = gcnew DataTable();
+		m_UserTable->Columns->Add("Date", DateTime::typeid);
+		m_UserTable->Columns->Add("Subject", String::typeid);
+		m_UserTable->Columns->Add("Status", String::typeid);
+		m_UserTable->Columns->Add("Ticket Number", Int32::typeid);
+		T6_DGV->BorderStyle = BorderStyle::None;
+		T6_DGV->AlternatingRowsDefaultCellStyle->BackColor = Color::FromArgb(238, 239, 249);
+		T6_DGV->CellBorderStyle = DataGridViewCellBorderStyle::SingleHorizontal;
+		T6_DGV->DefaultCellStyle->SelectionBackColor = Color::DarkTurquoise;
+		T6_DGV->DefaultCellStyle->SelectionForeColor = Color::WhiteSmoke;
+		T6_DGV->BackgroundColor = Color::White;
 
+		T6_DGV->EnableHeadersVisualStyles = false;
+		T6_DGV->ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle::None;
+		T6_DGV->ColumnHeadersDefaultCellStyle->BackColor = Color::FromArgb(20, 25, 72);
+		T6_DGV->ColumnHeadersDefaultCellStyle->ForeColor = Color::White;
+
+		m_TecTable = gcnew DataTable();
+		m_TecTable->Columns->Add("Date", DateTime::typeid);
+		m_TecTable->Columns->Add("Subject", String::typeid);
+		m_TecTable->Columns->Add("User Name", String::typeid);
+		m_TecTable->Columns->Add("ID", Int32::typeid);
+		m_TecTable->Columns->Add("Status", String::typeid);
+		m_TecTable->Columns->Add("Urgency", String::typeid);
+		m_TecTable->Columns->Add("Ticket Number", Int32::typeid);
+
+		T9_DGV->BorderStyle = BorderStyle::None;
+		T9_DGV->AlternatingRowsDefaultCellStyle->BackColor = Color::FromArgb(238, 239, 249);
+		T9_DGV->CellBorderStyle = DataGridViewCellBorderStyle::SingleHorizontal;
+		T9_DGV->DefaultCellStyle->SelectionBackColor = Color::DarkTurquoise;
+		T9_DGV->DefaultCellStyle->SelectionForeColor = Color::WhiteSmoke;
+		T9_DGV->BackgroundColor = Color::White;
+
+		T9_DGV->EnableHeadersVisualStyles = false;
+		T9_DGV->ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle::None;
+		T9_DGV->ColumnHeadersDefaultCellStyle->BackColor = Color::FromArgb(20, 25, 72);
+		T9_DGV->ColumnHeadersDefaultCellStyle->ForeColor = Color::White;
+
+		T6_DGV->DataSource = m_UserTable;
+		T9_DGV->DataSource = m_TecTable;
+	}
 	private: System::Windows::Forms::Button^  T3_NTbutton;
 	public:
 	private: String^ m_id;
@@ -1232,6 +1248,8 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			// 
 			// T9_DGV
 			// 
+			this->T9_DGV->AllowUserToAddRows = false;
+			this->T9_DGV->AllowUserToDeleteRows = false;
 			this->T9_DGV->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->T9_DGV->Location = System::Drawing::Point(7, 102);
 			this->T9_DGV->Name = L"T9_DGV";
@@ -1261,6 +1279,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->button1->TabIndex = 8;
 			this->button1->Text = L"S";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// T9_CBF
 			// 
@@ -1865,7 +1884,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 
 		}
 #pragma endregion
-	private: System::Void loginButton_Click(System::Object^  sender, System::EventArgs^  e) {
+private: System::Void loginButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		TabCon->SelectedIndex=1;
 		ShortLabel->Text = "Login";
 		loginButton->Visible = false;
@@ -2029,17 +2048,19 @@ bool Create_User(string New_User)
 			flag = line.substr(line.find(':') + 1, line.length());
 			if (CheckID(New_User, flag) == true) //Checks if the user is already existing in the program
 			{
-
+				myfile.close();
 				MessageBox::Show("The ID is already existing in the system");
 				return false;
 			}
 		}
 		if (!Register(New_User, HOLD))//Register a new user
 		{
+			myfile.close();
 			return false;
 		}
 		myfile.close();
 	}
+	myfile.close();
 	return true;
 }
 bool Register(string New_User, string hold)
@@ -2050,12 +2071,14 @@ bool Register(string New_User, string hold)
 	ofstream myfile("New.txt");
 	if (CheckPassword()) // check if the password that chose by the user is under our conditions
 	{
+		myfile.close();
 		MessageBox::Show("Invalid Password,try again");
 		return false;
 	}
 	MarshalString(T4_TBE->Text, temp);
 	if (CheckEmail(temp, hold) == true) //checks if the email is Under our conditions
 	{
+		myfile.close();
 		MessageBox::Show("Invalid email,try again");
 		return false;
 	}
@@ -2089,9 +2112,13 @@ bool Register(string New_User, string hold)
 		myfile << temp;
 		myfile << "\n";
 		myfile.close();
+		return true;
 	}
-	MessageBox::Show("Cant connect to database!");
-	return false;
+	else
+	{
+		MessageBox::Show("Cant connect to database!");
+		return false;
+	}
 }
 bool CheckEmail(string email, string hold)
 {
@@ -2149,7 +2176,7 @@ private: System::Void T5_Button_Click(System::Object^  sender, System::EventArgs
 		TabCon->SelectedIndex = 2;
 	}
 }
-void update_database(string id, string subject, string status, string date, string description) //database update function
+void update_database(string id, string subject, string status, string date, string description, int ticket_number, string tech_notice ,string Urgency) //database update function
 {
 	string fullname, id1;
 	string line;
@@ -2161,6 +2188,9 @@ void update_database(string id, string subject, string status, string date, stri
 	tickets << "Status:" << status << endl;
 	tickets << "Date:" << date << endl;
 	tickets << "Description:" << description << endl;
+	tickets << "Ticket Number:" << ticket_number << endl;
+	tickets << "Urgency:" << Urgency << endl;
+	tickets << "Technician Notice:" << tech_notice << endl;
 
 	tickets.close(); // close ticket
 }
@@ -2170,9 +2200,9 @@ void create_new_ticket(string id) //creating new ticket function
 	string status = "new";
 	string subject = " ";
 	string date = getTimeStr();
-
+	int ticketNumber = get_new_ticket_number();
+	string tech_notice = "empty";
 	int choice = T5_CB->SelectedIndex;
-
 
 	switch (choice)
 	{
@@ -2181,7 +2211,7 @@ void create_new_ticket(string id) //creating new ticket function
 		{
 			subject = "Courses";
 			MarshalString(T5_RTB->Text, description);
-			update_database(id, subject, status, date, description);
+			update_database(id, subject, status, date, description, ticketNumber, tech_notice,"Unknown");
 
 			break;
 		}
@@ -2191,7 +2221,7 @@ void create_new_ticket(string id) //creating new ticket function
 			subject = "Grades";
 
 			MarshalString(T5_RTB->Text, description);
-			update_database(id, subject, status, date, description);
+			update_database(id, subject, status, date, description, ticketNumber, tech_notice, "Unknown");
 			break;
 		}
 
@@ -2200,7 +2230,7 @@ void create_new_ticket(string id) //creating new ticket function
 			subject = "Maintenance_problem";
 
 			MarshalString(T5_RTB->Text, description);
-			update_database(id, subject, status, date, description);
+			update_database(id, subject, status, date, description, ticketNumber, tech_notice, "Unknown");
 			break;
 		}
 
@@ -2209,7 +2239,7 @@ void create_new_ticket(string id) //creating new ticket function
 			subject = "Other";
 
 			MarshalString(T5_RTB->Text, description);
-			update_database(id, subject, status, date, description);
+			update_database(id, subject, status, date, description, ticketNumber, tech_notice, "Unknown");
 			break;
 		}
 	}
@@ -2235,6 +2265,10 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 	string subject, description, date, status;
 	string line;
 	string id1;
+	string ticket_number;
+	string tech_notice;
+	string Urgency;
+
 	if (m_UserTable->Rows->Count > 0)
 	{
 		m_UserTable->Rows->Clear();
@@ -2293,6 +2327,12 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				date = line.substr(line.find(':') + 1, line.length());
 				getline(tickets, line);
 				description = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				ticket_number = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				Urgency = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				tech_notice = line.substr(line.find(':') + 1, line.length());
 
 				if (subject1 == subject)
 				{
@@ -2305,7 +2345,7 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 						output.push_back(i);
 						ss.ignore(1);
 					}
-					int s = stoi(id);
+					int s = stoi(ticket_number);
 					DateTime^ d = gcnew DateTime(output[2], output[1], output[0]);
 					m_UserTable->Rows->Add(d,nSubject,nStatus,s);
 					//cout << "ID: " << id << "\t\tSubject: " << subject << "\t\tstatus: " << status << "\t\tDate: " << date << "\t\tdescription: " << description << endl;
@@ -2319,6 +2359,8 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 		{
 			//cout << "Your user does not have a ticket in subject: " << subject1 << endl;
 		}
+		T6_DGV->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
+		T6_DGV->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::None;
 		break;
 
 	}
@@ -2358,6 +2400,12 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				date = line.substr(line.find(':') + 1, line.length());
 				getline(tickets, line);
 				description = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				ticket_number = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				Urgency = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				tech_notice = line.substr(line.find(':') + 1, line.length());
 
 				if (status1 == status)
 				{
@@ -2370,7 +2418,7 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 						output.push_back(i);
 						ss.ignore(1);
 					}
-					int s = stoi(id);
+					int s = stoi(ticket_number);
 					DateTime^ d = gcnew DateTime(output[2], output[1], output[0]);
 					m_UserTable->Rows->Add(d, nSubject, nStatus, s);
 					//cout << "ID: " << id << "\tSubject: " << subject << "\tstatus: " << status << "\tDate: " << date << "\tdescription: " << description << endl;
@@ -2383,6 +2431,8 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 		{
 			//cout << "Your user does not have a ticket in status: " << status1 << endl;
 		}
+		T6_DGV->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
+		T6_DGV->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::None;
 		break;
 	}
 
@@ -2409,6 +2459,12 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				date = line.substr(line.find(':') + 1, line.length() - 1);
 				getline(tickets, line);
 				description = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				ticket_number = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				Urgency = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				tech_notice = line.substr(line.find(':') + 1, line.length());
 
 				if (date1 == date)
 				{
@@ -2421,7 +2477,7 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 						output.push_back(i);
 						ss.ignore(1);
 					}
-					int s = stoi(id);
+					int s = stoi(ticket_number);
 					DateTime^ d = gcnew DateTime(output[2], output[1], output[0]);
 					m_UserTable->Rows->Add(d, nSubject, nStatus, s);
 					//cout << "ID: " << id << "\tSubject: " << subject << "\tstatus: " << status << "\tDate: " << date << "\tdescription: " << description << endl;
@@ -2434,7 +2490,8 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 		{
 			//cout << "Your user does not have a ticket by date: " << date1 << endl;
 		}
-
+		T6_DGV->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
+		T6_DGV->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::None;
 		break;
 	}
 
@@ -2454,6 +2511,12 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				date = line.substr(line.find(':') + 1, line.length() - 1);
 				getline(tickets, line);
 				description = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				ticket_number = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				Urgency = line.substr(line.find(':') + 1, line.length());
+				getline(tickets, line);
+				tech_notice = line.substr(line.find(':') + 1, line.length());
 
 				String^ nSubject = gcnew String(subject.c_str());
 				String^ nStatus = gcnew String(status.c_str());
@@ -2464,17 +2527,18 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 					output.push_back(i);
 					ss.ignore(1);
 				}
-				int s = stoi(id);
+				int s = stoi(ticket_number);
 				DateTime^ d = gcnew DateTime(output[2], output[1], output[0]);
 				m_UserTable->Rows->Add(d, nSubject, nStatus, s);
 			//	T6_DGV->AutoResizeColumns(DataGridViewAutoSizeColumnsMode::Fill);
-				T6_DGV->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
-				T6_DGV->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::None;
+				
 				//cout << "ID: " << id << "\tSubject: " << subject << "\tstatus: " << status << "\tDate: " << date << "\tdescription: " << description << endl;
 
 
 			}
 		}
+		T6_DGV->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
+		T6_DGV->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::None;
 		break;
 	}
 
@@ -2487,6 +2551,7 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 private: System::Void TecButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	TabCon->SelectedIndex = 6;
 	ShortLabel->Text = "Technician Login";
+	MainButton->Visible = true;
 }
 private: System::Void T7_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 	string user, password;
@@ -2496,6 +2561,7 @@ private: System::Void T7_Button_Click(System::Object^  sender, System::EventArgs
 	{
 		TabCon->SelectedIndex = 7;
 		ShortLabel->Text = "T-Menu";
+		m_id = T7_TBUN->Text;
 	}
 }
 bool Technician_Login(string ID, string Password)
@@ -2515,10 +2581,12 @@ bool Technician_Login(string ID, string Password)
 				getline(myfile, line);
 				getline(myfile, line);
 				flag = line.substr(line.find(':') + 1, line.length());
+				getline(myfile, line);
 				if (Verify_Password(flag, Password) == true)
 				{
 					MessageBox::Show("Connected");
 					m_id = gcnew String(ID.c_str());
+					myfile.close();
 					return true;
 				}
 				else
@@ -2537,10 +2605,61 @@ bool Technician_Login(string ID, string Password)
 	MessageBox::Show("No database to connect!");
 	return false;
 }
+int get_new_ticket_number()
+{
+	int last;
+	string last1;
+	string line;
+	ifstream tickets;
+	tickets.open("ticket_database.txt");
+
+	while (getline(tickets, line))
+	{
+		getline(tickets, line);
+		getline(tickets, line);
+		getline(tickets, line);
+		getline(tickets, line);
+		getline(tickets, line);
+		getline(tickets, line);
+		getline(tickets, line);
+		last1 = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+	}
+	last = atoi(last1.c_str());
+	tickets.close();
+	return last + 1;
+
+}
+string GetName(string E_User)
+{
+	string line;
+	string flag;
+	ifstream myfile("New.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line)) //write line by line into the string "line"
+		{
+			flag = line.substr(line.find(':') + 1, line.length());
+			if (CheckID(E_User, flag) == true) //Checks if the user is already existing in the program
+			{
+				getline(myfile, line);
+				flag = line.substr(line.find(':') + 1, line.length());
+				myfile.close();
+				return flag;
+			}
+		}
+		myfile.close();
+	}
+	return "Nothing";
+}
 private: System::Void T8_TLButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	TabCon->SelectedIndex = 8;
 	ShortLabel->Text = "Tickets List";
+	string id;
+	MarshalString(m_id, id);
+	Technician_ticket_view(id);
 	TMenuButton->Visible = true;
+
 }
 private: System::Void T8_TAButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	TabCon->SelectedIndex = 9;
@@ -2566,6 +2685,543 @@ private: System::Void T6_Sbutton_Click(System::Object^  sender, System::EventArg
 			case 0:User_tickets_history(id, 1);	break;
 			case 1:User_tickets_history(id, 2);	break;
 			case 2:User_tickets_history(id, 3); break;
+		}
+	}
+}
+bool Verify_Tech_Id_and_Password(string ID, string password)
+{
+	int flag1 = 0;
+	string line;
+	string flag;
+	ifstream myfile("Technician_database.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line)) //write line by line into the string "line"
+		{
+			flag = line.substr(line.find(":") + 1, line.length());
+			if (CheckID(ID, flag) == true) //Checks if the user is already existing in the program
+			{
+				//get Profession
+				flag1++;
+				getline(myfile, line);
+				flag = line.substr(line.find(":") + 1, line.length());
+				if (!Verify_Password(flag, password))
+				{
+					MessageBox::Show("Incorrect password");
+					myfile.close();
+					return false;
+				}
+				else
+				{
+					MessageBox::Show("Connected");
+					myfile.close();
+					return true;
+
+				}
+			}
+
+		}
+		MessageBox::Show("No such user!");
+		myfile.close();
+		return false;
+	}
+	MessageBox::Show("No connection to database!");
+	return false;
+}
+string GetTechnicianProfession(string ID)
+{
+	string line;
+	string flag;
+	ifstream myfile("Technician_database.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line)) //write line by line into the string "line"
+		{
+			flag = line.substr(line.find(":") + 1, line.length());
+			if (CheckID(ID, flag) == true) //Checks if the user is already existing in the program
+			{
+				//get Profession
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				string Profession = line.substr(line.find(":") + 1, line.length());
+				myfile.close();
+				return Profession;
+			}
+
+		}
+		MessageBox::Show("No such user!");
+		myfile.close();
+		return NULL;
+	}
+	MessageBox::Show("No connection to database!");
+	return NULL;
+}
+void AddRowTec(string subject,string status,string id1,string Urgency,string date,string ticket_number)
+{
+	String^ nSubject = gcnew String(subject.c_str());
+	String^ nStatus = gcnew String(status.c_str());
+	string FullName = GetName(id1);
+	String^ UserName = gcnew String(FullName.c_str());
+	String^ GUrgency = gcnew String(Urgency.c_str());
+
+	std::stringstream ss(date);
+	std::vector<int> output;
+	int i;
+	while (ss >> i) {
+		output.push_back(i);
+		ss.ignore(1);
+	}
+	int s = stoi(ticket_number);
+	int iId = stoi(id1);
+	DateTime^ d = gcnew DateTime(output[2], output[1], output[0]);
+	m_TecTable->Rows->Add(d, nSubject, UserName, iId, nStatus, GUrgency, s);
+}
+void Technician_ticket_view(string id)
+{
+	string subject, description, date, status, ticket_number, tech_notice;
+	string line;
+	string id1;
+	string Urgency;
+	
+	if (m_TecTable->Rows->Count > 0)
+	{
+		m_TecTable->Rows->Clear();
+		T9_DGV->Refresh();
+	}
+	
+
+	string subject1 = GetTechnicianProfession(id);
+	ifstream tickets("ticket_database.txt");
+	while (getline(tickets, line))
+	{
+		getline(tickets, line);
+		id1 = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		subject = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		status = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		date = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		description = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		ticket_number = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		Urgency = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		tech_notice = line.substr(line.find(':') + 1, line.length());
+
+		if (subject1 == subject)
+		{
+			//cout << "ID: " << id1 << endl << "Subject: " << subject << endl << "status: " << status << endl << "Date: " << date << endl << "Description: " << description << endl << "Ticket Number: " << ticket_number << endl << "Technician Notice: " << tech_notice << endl << endl;
+			AddRowTec(subject, status, id1, Urgency, date, ticket_number);
+			//cout << "ID: " << id << "\t\tSubject: " << subject << "\t\tstatus: " << status << "\t\tDate: " << date << "\t\tdescription: " << description << endl;
+		}
+
+	}
+
+
+	tickets.close();
+
+}
+void tech_update_ticket()
+{
+	int flag = 0;
+	int choise = 0, i = 0;
+	string new_status;
+/*
+	//cout << "Choose Update Options:" << endl;
+	while (choise < 1 || choise > 2)
+	{
+		cout << "ENTER NUMBER BETWEEN 1 - 2:" << endl;
+		cout << "[1]  Update Ticket Status" << endl;
+		cout << "[2]  Add Notice to Ticket" << endl;
+	//	cin >> choise;
+	//	cout << endl;
+	}*/
+
+	switch (choise)
+	{
+	case 1://[1]  update status
+	{
+		flag = 0;
+		int line_number = 0;
+		string ticket_number;
+		int ticket_number1;
+		ifstream tickets;
+		tickets.open("ticket_database.txt");
+		string line;
+		int t_n;
+	//	cout << "Enter Ticket Number to update:";
+	//	cin >> t_n;
+
+		while (getline(tickets, line))
+		{
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			ticket_number = line.substr(line.find(':') + 1, line.length());
+			ticket_number1 = atoi(ticket_number.c_str());
+			getline(tickets, line);
+
+			line_number += 8;
+
+			if (t_n == ticket_number1)
+			{
+				flag++;
+				int choose = 0;
+				while (choose > 3 || choose < 1)
+				{
+				/*	cout << "Choose the new status:" << endl;
+					cout << "[1] New" << endl;
+					cout << "[2] in progress" << endl;
+					cout << "[3] closed" << endl;
+
+					cin >> choose;*/
+					if (choose == 1) { new_status = "New"; }
+					else if (choose == 2) { new_status = "In_Progress"; }
+					else if (choose == 3) { new_status = "Closed"; }
+				}
+				tickets.close();
+				fstream input_file("ticket_database.txt", ios::in);
+				ofstream output_file("tmp.txt");
+				while (!input_file.eof())
+				{
+					if (i == line_number - 5)
+					{
+						output_file << "Status:" << new_status << endl;
+						getline(input_file, line);
+					}
+					else
+					{
+						getline(input_file, line);
+						output_file << line << endl;
+					}
+					i++;
+				}
+
+				input_file.close();
+				output_file.close();
+				break;
+			}
+
+		}
+	//	if (flag == 0) { cout << "ticket number " << t_n << " not found in the system!" << endl; }
+		break;
+	}
+
+	case 2://[2]  add notice
+	{
+		flag = 0;
+		int line_number = 1;
+		string ticket_number;
+		int ticket_number1;
+		ifstream tickets;
+		tickets.open("ticket_database.txt");
+		string line;
+		int t_n;
+	//	cout << "Enter Ticket Number to update:";
+	//	cin >> t_n;
+
+		while (getline(tickets, line))
+		{
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			getline(tickets, line);
+			ticket_number = line.substr(line.find(':') + 1, line.length());
+			ticket_number1 = atoi(ticket_number.c_str());
+			getline(tickets, line);
+
+			line_number += 8;
+
+			if (t_n == ticket_number1)
+			{
+				flag++;
+				tickets.close();
+				string notice;
+//				cout << "Enter your notice:" << endl;
+		//		cin.ignore();
+		//		getline(cin, notice);
+				fstream input_file("ticket_database.txt", ios::in);
+				ofstream output_file("tmp.txt");
+
+				while (!input_file.eof())
+				{
+					if (i == line_number - 2)
+					{
+						output_file << "Technician Notice:" << notice << endl;
+						getline(input_file, line);
+					}
+					else
+					{
+						getline(input_file, line);
+						output_file << line << endl;
+					}
+					i++;
+				}
+				input_file.close();
+				output_file.close();
+				break;
+			}
+
+		}
+	//	if (flag == 0) { cout << "ticket number " << t_n << " not found in the system!" << endl; }
+
+	}
+	}
+	string line;
+	fstream input_file("tmp.txt", ios::in);
+	ofstream output_file("ticket_database.txt");
+	while (!input_file.eof())
+	{
+		getline(input_file, line);
+		output_file << line << endl;
+	}
+
+}
+void tech_filter(string Filter,int Choice)
+{
+	string subject, description, date, status, ticket_number, tech_notice;
+	string line;
+	string id1;
+	string id;
+	string Urgency;
+	MarshalString(m_id, id);
+	string Profession=GetTechnicianProfession(id);
+	ifstream tickets;
+	tickets.open("ticket_database.txt");
+
+//	cout << "Filter by:" << endl;
+//	while (choise < 1 || choise > 4)
+//	{
+	/*	cout << "ENTER NUMBER BETWEEN 1 - 4:" << endl;
+		cout << "[1]  Id" << endl;
+		cout << "[2]  Status" << endl;
+		cout << "[3]  Date" << endl;
+		cout << "[4]  Non filter" << endl;
+
+		cin >> choise;
+		cout << endl;*/
+
+		switch (Choice+1)
+		{
+			case 1://[1]  filter by Id
+			{
+				int choise = 0;
+				//cout << "Enter ID to filter: " << endl;
+				//cin >> id;
+
+				while (getline(tickets, line))
+				{
+					getline(tickets, line);
+					id1 = line.substr(line.find(':') + 1, line.length());
+					if (id1 == Filter) //Checks if the user is already existing in the program
+					{
+						getline(tickets, line);
+						subject = line.substr(line.find(':') + 1, line.length());
+						getline(tickets, line);
+						status = line.substr(line.find(':') + 1, line.length());
+						getline(tickets, line);
+						date = line.substr(line.find(':') + 1, line.length());
+						getline(tickets, line);
+						description = line.substr(line.find(':') + 1, line.length());
+						getline(tickets, line);
+						ticket_number = line.substr(line.find(':') + 1, line.length());
+						getline(tickets, line);
+						Urgency = line.substr(line.find(':') + 1, line.length());
+						getline(tickets, line);
+						tech_notice = line.substr(line.find(':') + 1, line.length());
+
+						if (Profession == subject)
+						{
+							//cout << "ID: " << id << endl << "Subject: " << subject << endl << "status: " << status << endl << "Date: " << date << endl << "Description: " << description << endl << "Ticket Number: " << ticket_number << endl << "Technician Notice: " << tech_notice << endl << endl;
+							AddRowTec(subject, status, id1, Urgency, date, ticket_number);
+
+						}
+
+					}
+
+				}
+				break;
+
+			}
+
+			case 2://[2]  filter by status
+			{
+				int flag = 0;
+				string status1;
+				int choise = 0;
+				/*cout << "Choose Status:" << endl;
+				while (choise < 1 || choise > 3)
+				{
+					cout << "ENTER NUMBER BETWEEN 1 - 4:" << endl;
+					cout << "[1]  New" << endl;
+					cout << "[2]  In progress" << endl;
+					cout << "[3]  Closed" << endl;
+
+					cin >> choise;
+					cout << endl;
+				}
+				if (choise == 1) { status1 = "new"; }
+				else if (choise == 2) { status1 = "In_Progress"; }
+				else if (choise == 3) { status1 = "Closed"; }*/
+
+				while (getline(tickets, line))
+				{
+					getline(tickets, line);
+					id1 = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					subject = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					status = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					date = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					description = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					ticket_number = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					Urgency = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					tech_notice = line.substr(line.find(':') + 1, line.length());
+
+					if (Filter == status && subject == Profession)
+					{
+						//cout << "ID: " << id1 << endl << "Subject: " << subject << endl << "status: " << status << endl << "Date: " << date << endl << "Description: " << description << endl << "Ticket Number: " << ticket_number << endl << "Technician Notice: " << tech_notice << endl << endl;
+						AddRowTec(subject, status, id1, Urgency, date, ticket_number);
+					}
+
+				}
+				break;
+			}
+
+			case 3://[3]  filter by date
+			{
+				//cout << "Enter Date [DD-MM-YYYY]" << endl;
+				//cin >> date1;
+				Filter += " ";
+
+				while (getline(tickets, line))
+				{
+					getline(tickets, line);
+					id1 = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					subject = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					status = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					date = line.substr(line.find(':') + 1, line.length() - 1);
+					getline(tickets, line);
+					description = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					ticket_number = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					Urgency = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					tech_notice = line.substr(line.find(':') + 1, line.length());
+
+					if (Filter == date && subject == Profession)
+					{
+						//cout << "ID: " << id1 << endl << "Subject: " << subject << endl << "status: " << status << endl << "Date: " << date << endl << "Description: " << description << endl << "Ticket Number: " << ticket_number << endl << "Technician Notice: " << tech_notice << endl << endl;
+						AddRowTec(subject, status, id1, Urgency, date, ticket_number);
+					}
+
+				}
+				break;
+			}
+
+			case 4://[4]  Urgency
+			{
+				while (getline(tickets, line))
+				{
+					getline(tickets, line);
+					id1 = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					subject = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					status = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					date = line.substr(line.find(':') + 1, line.length() - 1);
+					getline(tickets, line);
+					description = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					ticket_number = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					Urgency = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					tech_notice = line.substr(line.find(':') + 1, line.length());
+
+					if (Filter == Urgency && subject == Profession)
+					{
+						//cout << "ID: " << id1 << endl << "Subject: " << subject << endl << "status: " << status << endl << "Date: " << date << endl << "Description: " << description << endl << "Ticket Number: " << ticket_number << endl << "Technician Notice: " << tech_notice << endl << endl;
+						AddRowTec(subject, status, id1, Urgency, date, ticket_number);
+					}
+
+				}
+			}
+			break;
+		
+
+			case 5://[5]  non filter
+			{
+				while (getline(tickets, line))
+				{
+					getline(tickets, line);
+					id1 = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					subject = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					status = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					date = line.substr(line.find(':') + 1, line.length() - 1);
+					getline(tickets, line);
+					description = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					ticket_number = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					Urgency = line.substr(line.find(':') + 1, line.length());
+					getline(tickets, line);
+					tech_notice = line.substr(line.find(':') + 1, line.length());
+
+					if (subject == Profession)
+					{
+						AddRowTec(subject, status, id1, Urgency, date, ticket_number);
+					}
+
+				}
+			}
+			break;
+		}
+
+
+		tickets.close();
+
+	}
+
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (T9_CBF->SelectedIndex == -1)
+	{
+		MessageBox::Show("No filter selected!");
+	}
+	else
+	{
+		///FIX HERHERHEHRHERHREHERe!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		string id;
+		MarshalString(m_id, id);
+		switch (T6_CB->SelectedIndex)
+		{
+		case 0:User_tickets_history(id, 1);	break;
+		case 1:User_tickets_history(id, 2);	break;
+		case 2:User_tickets_history(id, 3); break;
 		}
 	}
 }
