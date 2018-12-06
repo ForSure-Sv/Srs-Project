@@ -82,7 +82,7 @@ namespace CRM {
 	private: DataTable^ m_TecTable;
 	private: System::Windows::Forms::Label^  T3_l1;
 	private: System::Windows::Forms::Button^  T3_UHbutton;
-	private: System::Windows::Forms::Button^  T3_PButt;
+
 	private: System::Windows::Forms::Label^  T4_l6;
 	private: System::Windows::Forms::Label^  T4_l7;
 	private: System::Windows::Forms::Label^  T4_l5;
@@ -149,7 +149,8 @@ namespace CRM {
 	private: System::Windows::Forms::TabPage^  T9_TicketsList;
 	private: System::Windows::Forms::DataGridView^  T9_DGV;
 	private: System::Windows::Forms::Panel^  T9_P;
-	private: System::Windows::Forms::Button^  button1;
+private: System::Windows::Forms::Button^  T9_SButton;
+
 	private: System::Windows::Forms::ComboBox^  T9_CBF;
 	private: System::Windows::Forms::TextBox^  T9_TBSearch;
 	private: System::Windows::Forms::Label^  label2;
@@ -167,7 +168,7 @@ private: System::Windows::Forms::Label^  T11_l4;
 private: System::Windows::Forms::Label^  T11_l5;
 private: System::Windows::Forms::Label^  T11_l6;
 private: System::Windows::Forms::Label^  T11_l7;
-private: System::Windows::Forms::Label^  T11_l8;
+
 private: System::Windows::Forms::Label^  T11_TNlabel;
 private: System::Windows::Forms::Label^  T11_l9;
 private: System::Windows::Forms::Label^  T11_Desc;
@@ -178,19 +179,24 @@ private: System::Windows::Forms::Label^  T11_PN;
 private: System::Windows::Forms::Label^  T11_Department;
 private: System::Windows::Forms::Label^  T11_EMAIL;
 private: System::Windows::Forms::Label^  T11_ID;
-private: System::Windows::Forms::Label^  T11_LN;
+
 private: System::Windows::Forms::Label^  T11_FN;
 private: System::Windows::Forms::Label^  T11_l10;
-private: System::Windows::Forms::Label^  T11_l11;
+
 private: System::Windows::Forms::Label^  T11_l12;
 private: System::Windows::Forms::Label^  T11_l13;
 private: System::Windows::Forms::Label^  T11_l14;
 private: System::Windows::Forms::Label^  T11_l15;
 private: System::Windows::Forms::ComboBox^  T11_UrgencyCB;
 
-private: System::Windows::Forms::Label^  T11_InCharge;
-private: System::Windows::Forms::Label^  T11_AT;
+
+
 private: System::Windows::Forms::ComboBox^  T11_StatusCB;
+private: System::Windows::Forms::Button^  T9_RButton;
+private: System::Windows::Forms::RichTextBox^  T11_AT;
+private: System::Windows::Forms::Button^  T11_Back;
+private: System::Windows::Forms::Button^  T6_RButton;
+private: System::Windows::Forms::Button^  TS_BackUser;
 
 
 
@@ -266,6 +272,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->Title = (gcnew System::Windows::Forms::Label());
 			this->ShortBox = (gcnew System::Windows::Forms::GroupBox());
+			this->TS_BackUser = (gcnew System::Windows::Forms::Button());
 			this->TMenuButton = (gcnew System::Windows::Forms::Button());
 			this->MainButton = (gcnew System::Windows::Forms::Button());
 			this->TecButton = (gcnew System::Windows::Forms::Button());
@@ -284,7 +291,6 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T2_l2 = (gcnew System::Windows::Forms::Label());
 			this->T2_l1 = (gcnew System::Windows::Forms::Label());
 			this->T3UserMenu = (gcnew System::Windows::Forms::TabPage());
-			this->T3_PButt = (gcnew System::Windows::Forms::Button());
 			this->T3_UHbutton = (gcnew System::Windows::Forms::Button());
 			this->T3_NTbutton = (gcnew System::Windows::Forms::Button());
 			this->T3_l1 = (gcnew System::Windows::Forms::Label());
@@ -315,6 +321,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T5_l2 = (gcnew System::Windows::Forms::Label());
 			this->T6_UserHistory = (gcnew System::Windows::Forms::TabPage());
 			this->T6_P = (gcnew System::Windows::Forms::Panel());
+			this->T6_RButton = (gcnew System::Windows::Forms::Button());
 			this->T6_Sbutton = (gcnew System::Windows::Forms::Button());
 			this->T6_CB = (gcnew System::Windows::Forms::ComboBox());
 			this->T6_L1 = (gcnew System::Windows::Forms::Label());
@@ -335,7 +342,8 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T9_TicketsList = (gcnew System::Windows::Forms::TabPage());
 			this->T9_DGV = (gcnew System::Windows::Forms::DataGridView());
 			this->T9_P = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->T9_RButton = (gcnew System::Windows::Forms::Button());
+			this->T9_SButton = (gcnew System::Windows::Forms::Button());
 			this->T9_CBF = (gcnew System::Windows::Forms::ComboBox());
 			this->T9_TBSearch = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -343,6 +351,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T10_TicketsAn = (gcnew System::Windows::Forms::TabPage());
 			this->T10_l1 = (gcnew System::Windows::Forms::Label());
 			this->T11_TicketReview = (gcnew System::Windows::Forms::TabPage());
+			this->T11_Back = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->T11_TNlabel = (gcnew System::Windows::Forms::Label());
 			this->T11_l9 = (gcnew System::Windows::Forms::Label());
@@ -358,23 +367,19 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l5 = (gcnew System::Windows::Forms::Label());
 			this->T11_l6 = (gcnew System::Windows::Forms::Label());
 			this->T11_l7 = (gcnew System::Windows::Forms::Label());
-			this->T11_l8 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->T11_PN = (gcnew System::Windows::Forms::Label());
 			this->T11_Department = (gcnew System::Windows::Forms::Label());
 			this->T11_EMAIL = (gcnew System::Windows::Forms::Label());
 			this->T11_ID = (gcnew System::Windows::Forms::Label());
-			this->T11_LN = (gcnew System::Windows::Forms::Label());
 			this->T11_FN = (gcnew System::Windows::Forms::Label());
 			this->T11_l10 = (gcnew System::Windows::Forms::Label());
-			this->T11_l11 = (gcnew System::Windows::Forms::Label());
 			this->T11_l12 = (gcnew System::Windows::Forms::Label());
 			this->T11_l13 = (gcnew System::Windows::Forms::Label());
 			this->T11_l14 = (gcnew System::Windows::Forms::Label());
 			this->T11_l15 = (gcnew System::Windows::Forms::Label());
-			this->T11_InCharge = (gcnew System::Windows::Forms::Label());
-			this->T11_AT = (gcnew System::Windows::Forms::Label());
 			this->T11_StatusCB = (gcnew System::Windows::Forms::ComboBox());
+			this->T11_AT = (gcnew System::Windows::Forms::RichTextBox());
 			this->ShortBox->SuspendLayout();
 			this->TabCon->SuspendLayout();
 			this->T1WelTab->SuspendLayout();
@@ -413,6 +418,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			// ShortBox
 			// 
 			this->ShortBox->BackColor = System::Drawing::Color::Transparent;
+			this->ShortBox->Controls->Add(this->TS_BackUser);
 			this->ShortBox->Controls->Add(this->TMenuButton);
 			this->ShortBox->Controls->Add(this->MainButton);
 			this->ShortBox->Controls->Add(this->TecButton);
@@ -423,6 +429,21 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->ShortBox->Size = System::Drawing::Size(153, 425);
 			this->ShortBox->TabIndex = 1;
 			this->ShortBox->TabStop = false;
+			// 
+			// TS_BackUser
+			// 
+			this->TS_BackUser->BackColor = System::Drawing::Color::Transparent;
+			this->TS_BackUser->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->TS_BackUser->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->TS_BackUser->Location = System::Drawing::Point(15, 232);
+			this->TS_BackUser->Name = L"TS_BackUser";
+			this->TS_BackUser->Size = System::Drawing::Size(109, 87);
+			this->TS_BackUser->TabIndex = 5;
+			this->TS_BackUser->Text = L"Back to User menu";
+			this->TS_BackUser->UseVisualStyleBackColor = false;
+			this->TS_BackUser->Visible = false;
+			this->TS_BackUser->Click += gcnew System::EventHandler(this, &MyForm::TS_BackUser_Click);
 			// 
 			// TMenuButton
 			// 
@@ -653,7 +674,6 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			// T3UserMenu
 			// 
 			this->T3UserMenu->BackColor = System::Drawing::Color::BlanchedAlmond;
-			this->T3UserMenu->Controls->Add(this->T3_PButt);
 			this->T3UserMenu->Controls->Add(this->T3_UHbutton);
 			this->T3UserMenu->Controls->Add(this->T3_NTbutton);
 			this->T3UserMenu->Controls->Add(this->T3_l1);
@@ -663,20 +683,6 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T3UserMenu->Size = System::Drawing::Size(730, 411);
 			this->T3UserMenu->TabIndex = 2;
 			this->T3UserMenu->Text = L"UserMenu";
-			// 
-			// T3_PButt
-			// 
-			this->T3_PButt->BackColor = System::Drawing::Color::Transparent;
-			this->T3_PButt->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->T3_PButt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->T3_PButt->Location = System::Drawing::Point(7, 350);
-			this->T3_PButt->Name = L"T3_PButt";
-			this->T3_PButt->Size = System::Drawing::Size(115, 52);
-			this->T3_PButt->TabIndex = 8;
-			this->T3_PButt->Text = L"<-";
-			this->T3_PButt->UseVisualStyleBackColor = false;
-			this->T3_PButt->Click += gcnew System::EventHandler(this, &MyForm::T3_PButt_Click);
 			// 
 			// T3_UHbutton
 			// 
@@ -1014,6 +1020,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			// T6_P
 			// 
 			this->T6_P->BackColor = System::Drawing::Color::LightSeaGreen;
+			this->T6_P->Controls->Add(this->T6_RButton);
 			this->T6_P->Controls->Add(this->T6_Sbutton);
 			this->T6_P->Controls->Add(this->T6_CB);
 			this->T6_P->Controls->Add(this->T6_L1);
@@ -1023,12 +1030,25 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T6_P->Size = System::Drawing::Size(710, 44);
 			this->T6_P->TabIndex = 5;
 			// 
+			// T6_RButton
+			// 
+			this->T6_RButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->T6_RButton->Cursor = System::Windows::Forms::Cursors::Default;
+			this->T6_RButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->T6_RButton->Location = System::Drawing::Point(623, 11);
+			this->T6_RButton->Name = L"T6_RButton";
+			this->T6_RButton->Size = System::Drawing::Size(42, 30);
+			this->T6_RButton->TabIndex = 8;
+			this->T6_RButton->Text = L"R";
+			this->T6_RButton->UseVisualStyleBackColor = true;
+			this->T6_RButton->Click += gcnew System::EventHandler(this, &MyForm::T6_RButton_Click);
+			// 
 			// T6_Sbutton
 			// 
 			this->T6_Sbutton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->T6_Sbutton->Cursor = System::Windows::Forms::Cursors::Default;
 			this->T6_Sbutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->T6_Sbutton->Location = System::Drawing::Point(654, 9);
+			this->T6_Sbutton->Location = System::Drawing::Point(665, 11);
 			this->T6_Sbutton->Name = L"T6_Sbutton";
 			this->T6_Sbutton->Size = System::Drawing::Size(42, 30);
 			this->T6_Sbutton->TabIndex = 6;
@@ -1043,7 +1063,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				static_cast<System::Byte>(0)));
 			this->T6_CB->FormattingEnabled = true;
 			this->T6_CB->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Subject", L"Status", L"Date" });
-			this->T6_CB->Location = System::Drawing::Point(489, 8);
+			this->T6_CB->Location = System::Drawing::Point(463, 8);
 			this->T6_CB->Name = L"T6_CB";
 			this->T6_CB->Size = System::Drawing::Size(154, 33);
 			this->T6_CB->TabIndex = 7;
@@ -1091,6 +1111,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T6_DGV->RowTemplate->DefaultCellStyle->Padding = System::Windows::Forms::Padding(0, 4, 0, 0);
 			this->T6_DGV->Size = System::Drawing::Size(710, 266);
 			this->T6_DGV->TabIndex = 4;
+			this->T6_DGV->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::T6_DGV_CellDoubleClick);
 			// 
 			// T6_l2
 			// 
@@ -1255,11 +1276,13 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T9_DGV->Name = L"T9_DGV";
 			this->T9_DGV->Size = System::Drawing::Size(710, 300);
 			this->T9_DGV->TabIndex = 5;
+			this->T9_DGV->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::T9_DGV_CellDoubleClick);
 			// 
 			// T9_P
 			// 
 			this->T9_P->BackColor = System::Drawing::Color::LimeGreen;
-			this->T9_P->Controls->Add(this->button1);
+			this->T9_P->Controls->Add(this->T9_RButton);
+			this->T9_P->Controls->Add(this->T9_SButton);
 			this->T9_P->Controls->Add(this->T9_CBF);
 			this->T9_P->Controls->Add(this->T9_TBSearch);
 			this->T9_P->Controls->Add(this->label2);
@@ -1268,18 +1291,31 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T9_P->Size = System::Drawing::Size(734, 44);
 			this->T9_P->TabIndex = 4;
 			// 
-			// button1
+			// T9_RButton
 			// 
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->button1->Cursor = System::Windows::Forms::Cursors::Default;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Location = System::Drawing::Point(679, 8);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(42, 30);
-			this->button1->TabIndex = 8;
-			this->button1->Text = L"S";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->T9_RButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->T9_RButton->Cursor = System::Windows::Forms::Cursors::Default;
+			this->T9_RButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->T9_RButton->Location = System::Drawing::Point(648, 8);
+			this->T9_RButton->Name = L"T9_RButton";
+			this->T9_RButton->Size = System::Drawing::Size(42, 30);
+			this->T9_RButton->TabIndex = 10;
+			this->T9_RButton->Text = L"R";
+			this->T9_RButton->UseVisualStyleBackColor = true;
+			this->T9_RButton->Click += gcnew System::EventHandler(this, &MyForm::T9_RButton_Click);
+			// 
+			// T9_SButton
+			// 
+			this->T9_SButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->T9_SButton->Cursor = System::Windows::Forms::Cursors::Default;
+			this->T9_SButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->T9_SButton->Location = System::Drawing::Point(689, 8);
+			this->T9_SButton->Name = L"T9_SButton";
+			this->T9_SButton->Size = System::Drawing::Size(42, 30);
+			this->T9_SButton->TabIndex = 8;
+			this->T9_SButton->Text = L"S";
+			this->T9_SButton->UseVisualStyleBackColor = true;
+			this->T9_SButton->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// T9_CBF
 			// 
@@ -1287,7 +1323,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T9_CBF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->T9_CBF->FormattingEnabled = true;
-			this->T9_CBF->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"ID", L"Urgency", L"Subject", L"Status" });
+			this->T9_CBF->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"ID", L"Urgency", L"Date", L"Status" });
 			this->T9_CBF->Location = System::Drawing::Point(488, 5);
 			this->T9_CBF->Name = L"T9_CBF";
 			this->T9_CBF->Size = System::Drawing::Size(154, 33);
@@ -1353,12 +1389,24 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			// T11_TicketReview
 			// 
 			this->T11_TicketReview->BackColor = System::Drawing::Color::BlanchedAlmond;
+			this->T11_TicketReview->Controls->Add(this->T11_Back);
 			this->T11_TicketReview->Controls->Add(this->panel1);
 			this->T11_TicketReview->Controls->Add(this->T11_TLP);
 			this->T11_TicketReview->Location = System::Drawing::Point(4, 5);
 			this->T11_TicketReview->Name = L"T11_TicketReview";
 			this->T11_TicketReview->Size = System::Drawing::Size(730, 411);
 			this->T11_TicketReview->TabIndex = 10;
+			// 
+			// T11_Back
+			// 
+			this->T11_Back->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->T11_Back->Location = System::Drawing::Point(7, 347);
+			this->T11_Back->Name = L"T11_Back";
+			this->T11_Back->Size = System::Drawing::Size(75, 55);
+			this->T11_Back->TabIndex = 2;
+			this->T11_Back->Text = L"<-";
+			this->T11_Back->UseVisualStyleBackColor = true;
+			this->T11_Back->Click += gcnew System::EventHandler(this, &MyForm::T11_Back_Click);
 			// 
 			// panel1
 			// 
@@ -1397,9 +1445,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l9->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->T11_l9->Location = System::Drawing::Point(123, 3);
 			this->T11_l9->Name = L"T11_l9";
-			this->T11_l9->Size = System::Drawing::Size(151, 22);
+			this->T11_l9->Size = System::Drawing::Size(141, 22);
 			this->T11_l9->TabIndex = 8;
-			this->T11_l9->Text = L"Submission Date:";
+			this->T11_l9->Text = L"TIcket Number:";
 			this->T11_l9->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_TLP
@@ -1419,24 +1467,22 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_TLP->Controls->Add(this->T11_l5, 0, 4);
 			this->T11_TLP->Controls->Add(this->T11_l6, 0, 5);
 			this->T11_TLP->Controls->Add(this->T11_l7, 0, 6);
-			this->T11_TLP->Controls->Add(this->T11_l8, 0, 7);
 			this->T11_TLP->Controls->Add(this->tableLayoutPanel1, 1, 3);
-			this->T11_TLP->Controls->Add(this->T11_InCharge, 1, 7);
-			this->T11_TLP->Controls->Add(this->T11_AT, 1, 4);
 			this->T11_TLP->Controls->Add(this->T11_StatusCB, 1, 5);
+			this->T11_TLP->Controls->Add(this->T11_AT, 1, 4);
 			this->T11_TLP->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->T11_TLP->Location = System::Drawing::Point(95, 23);
 			this->T11_TLP->Name = L"T11_TLP";
-			this->T11_TLP->RowCount = 8;
+			this->T11_TLP->RowCount = 7;
 			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 24)));
 			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 24)));
 			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 47)));
 			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 145)));
-			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 44)));
-			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 27)));
-			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 28)));
-			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 21)));
+			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 72)));
+			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 31)));
+			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 8)));
+			this->T11_TLP->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
 			this->T11_TLP->Size = System::Drawing::Size(567, 388);
 			this->T11_TLP->TabIndex = 0;
 			// 
@@ -1447,7 +1493,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_UrgencyCB->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->T11_UrgencyCB->FormattingEnabled = true;
 			this->T11_UrgencyCB->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Low", L"Medium", L"High", L"Unknown" });
-			this->T11_UrgencyCB->Location = System::Drawing::Point(163, 325);
+			this->T11_UrgencyCB->Location = System::Drawing::Point(163, 357);
 			this->T11_UrgencyCB->Margin = System::Windows::Forms::Padding(0);
 			this->T11_UrgencyCB->Name = L"T11_UrgencyCB";
 			this->T11_UrgencyCB->Size = System::Drawing::Size(402, 27);
@@ -1552,7 +1598,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l5->AutoSize = true;
 			this->T11_l5->Location = System::Drawing::Point(5, 250);
 			this->T11_l5->Name = L"T11_l5";
-			this->T11_l5->Size = System::Drawing::Size(153, 44);
+			this->T11_l5->Size = System::Drawing::Size(153, 72);
 			this->T11_l5->TabIndex = 4;
 			this->T11_l5->Text = L"Actions taken:";
 			this->T11_l5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -1563,9 +1609,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_l6->AutoSize = true;
-			this->T11_l6->Location = System::Drawing::Point(5, 296);
+			this->T11_l6->Location = System::Drawing::Point(5, 324);
 			this->T11_l6->Name = L"T11_l6";
-			this->T11_l6->Size = System::Drawing::Size(153, 27);
+			this->T11_l6->Size = System::Drawing::Size(153, 31);
 			this->T11_l6->TabIndex = 5;
 			this->T11_l6->Text = L"Status";
 			this->T11_l6->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -1576,25 +1622,12 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_l7->AutoSize = true;
-			this->T11_l7->Location = System::Drawing::Point(5, 325);
+			this->T11_l7->Location = System::Drawing::Point(5, 357);
 			this->T11_l7->Name = L"T11_l7";
-			this->T11_l7->Size = System::Drawing::Size(153, 28);
+			this->T11_l7->Size = System::Drawing::Size(153, 29);
 			this->T11_l7->TabIndex = 6;
 			this->T11_l7->Text = L"Urgency";
 			this->T11_l7->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_l8
-			// 
-			this->T11_l8->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_l8->AutoSize = true;
-			this->T11_l8->Location = System::Drawing::Point(5, 355);
-			this->T11_l8->Name = L"T11_l8";
-			this->T11_l8->Size = System::Drawing::Size(153, 31);
-			this->T11_l8->TabIndex = 7;
-			this->T11_l8->Text = L"Technician in charge";
-			this->T11_l8->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// tableLayoutPanel1
 			// 
@@ -1607,27 +1640,25 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				50)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
-			this->tableLayoutPanel1->Controls->Add(this->T11_PN, 1, 5);
-			this->tableLayoutPanel1->Controls->Add(this->T11_Department, 1, 4);
-			this->tableLayoutPanel1->Controls->Add(this->T11_EMAIL, 1, 3);
-			this->tableLayoutPanel1->Controls->Add(this->T11_ID, 1, 2);
-			this->tableLayoutPanel1->Controls->Add(this->T11_LN, 1, 1);
+			this->tableLayoutPanel1->Controls->Add(this->T11_PN, 1, 4);
+			this->tableLayoutPanel1->Controls->Add(this->T11_Department, 1, 3);
+			this->tableLayoutPanel1->Controls->Add(this->T11_EMAIL, 1, 2);
+			this->tableLayoutPanel1->Controls->Add(this->T11_ID, 1, 1);
 			this->tableLayoutPanel1->Controls->Add(this->T11_FN, 1, 0);
 			this->tableLayoutPanel1->Controls->Add(this->T11_l10, 0, 0);
-			this->tableLayoutPanel1->Controls->Add(this->T11_l11, 0, 1);
-			this->tableLayoutPanel1->Controls->Add(this->T11_l12, 0, 2);
-			this->tableLayoutPanel1->Controls->Add(this->T11_l13, 0, 3);
-			this->tableLayoutPanel1->Controls->Add(this->T11_l14, 0, 4);
-			this->tableLayoutPanel1->Controls->Add(this->T11_l15, 0, 5);
+			this->tableLayoutPanel1->Controls->Add(this->T11_l12, 0, 1);
+			this->tableLayoutPanel1->Controls->Add(this->T11_l13, 0, 2);
+			this->tableLayoutPanel1->Controls->Add(this->T11_l14, 0, 3);
+			this->tableLayoutPanel1->Controls->Add(this->T11_l15, 0, 4);
 			this->tableLayoutPanel1->Location = System::Drawing::Point(166, 106);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 6;
+			this->tableLayoutPanel1->RowCount = 5;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 23)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 23)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 23)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 23)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 22)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 23)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 30)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 27)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 11)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(396, 139);
 			this->tableLayoutPanel1->TabIndex = 11;
 			// 
@@ -1638,9 +1669,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_PN->AutoSize = true;
 			this->T11_PN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_PN->Location = System::Drawing::Point(201, 120);
+			this->T11_PN->Location = System::Drawing::Point(201, 108);
 			this->T11_PN->Name = L"T11_PN";
-			this->T11_PN->Size = System::Drawing::Size(191, 23);
+			this->T11_PN->Size = System::Drawing::Size(191, 30);
 			this->T11_PN->TabIndex = 22;
 			this->T11_PN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -1651,9 +1682,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_Department->AutoSize = true;
 			this->T11_Department->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_Department->Location = System::Drawing::Point(201, 97);
+			this->T11_Department->Location = System::Drawing::Point(201, 80);
 			this->T11_Department->Name = L"T11_Department";
-			this->T11_Department->Size = System::Drawing::Size(191, 22);
+			this->T11_Department->Size = System::Drawing::Size(191, 27);
 			this->T11_Department->TabIndex = 21;
 			this->T11_Department->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -1664,9 +1695,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_EMAIL->AutoSize = true;
 			this->T11_EMAIL->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_EMAIL->Location = System::Drawing::Point(201, 73);
+			this->T11_EMAIL->Location = System::Drawing::Point(201, 49);
 			this->T11_EMAIL->Name = L"T11_EMAIL";
-			this->T11_EMAIL->Size = System::Drawing::Size(191, 23);
+			this->T11_EMAIL->Size = System::Drawing::Size(191, 30);
 			this->T11_EMAIL->TabIndex = 20;
 			this->T11_EMAIL->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
@@ -1677,24 +1708,11 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_ID->AutoSize = true;
 			this->T11_ID->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_ID->Location = System::Drawing::Point(201, 49);
+			this->T11_ID->Location = System::Drawing::Point(201, 25);
 			this->T11_ID->Name = L"T11_ID";
 			this->T11_ID->Size = System::Drawing::Size(191, 23);
 			this->T11_ID->TabIndex = 19;
 			this->T11_ID->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_LN
-			// 
-			this->T11_LN->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_LN->AutoSize = true;
-			this->T11_LN->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_LN->Location = System::Drawing::Point(201, 25);
-			this->T11_LN->Name = L"T11_LN";
-			this->T11_LN->Size = System::Drawing::Size(191, 23);
-			this->T11_LN->TabIndex = 18;
-			this->T11_LN->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_FN
 			// 
@@ -1719,21 +1737,8 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 			this->T11_l10->Name = L"T11_l10";
 			this->T11_l10->Size = System::Drawing::Size(190, 23);
 			this->T11_l10->TabIndex = 12;
-			this->T11_l10->Text = L"First name:";
+			this->T11_l10->Text = L"Full Name:";
 			this->T11_l10->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_l11
-			// 
-			this->T11_l11->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_l11->AutoSize = true;
-			this->T11_l11->Location = System::Drawing::Point(4, 25);
-			this->T11_l11->Name = L"T11_l11";
-			this->T11_l11->Size = System::Drawing::Size(190, 23);
-			this->T11_l11->TabIndex = 13;
-			this->T11_l11->Text = L"Last name:";
-			this->T11_l11->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_l12
 			// 
@@ -1741,7 +1746,7 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_l12->AutoSize = true;
-			this->T11_l12->Location = System::Drawing::Point(4, 49);
+			this->T11_l12->Location = System::Drawing::Point(4, 25);
 			this->T11_l12->Name = L"T11_l12";
 			this->T11_l12->Size = System::Drawing::Size(190, 23);
 			this->T11_l12->TabIndex = 14;
@@ -1754,9 +1759,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_l13->AutoSize = true;
-			this->T11_l13->Location = System::Drawing::Point(4, 73);
+			this->T11_l13->Location = System::Drawing::Point(4, 49);
 			this->T11_l13->Name = L"T11_l13";
-			this->T11_l13->Size = System::Drawing::Size(190, 23);
+			this->T11_l13->Size = System::Drawing::Size(190, 30);
 			this->T11_l13->TabIndex = 15;
 			this->T11_l13->Text = L"Email";
 			this->T11_l13->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -1767,9 +1772,9 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_l14->AutoSize = true;
-			this->T11_l14->Location = System::Drawing::Point(4, 97);
+			this->T11_l14->Location = System::Drawing::Point(4, 80);
 			this->T11_l14->Name = L"T11_l14";
-			this->T11_l14->Size = System::Drawing::Size(190, 22);
+			this->T11_l14->Size = System::Drawing::Size(190, 27);
 			this->T11_l14->TabIndex = 16;
 			this->T11_l14->Text = L"Department:";
 			this->T11_l14->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -1780,38 +1785,12 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->T11_l15->AutoSize = true;
-			this->T11_l15->Location = System::Drawing::Point(4, 120);
+			this->T11_l15->Location = System::Drawing::Point(4, 108);
 			this->T11_l15->Name = L"T11_l15";
-			this->T11_l15->Size = System::Drawing::Size(190, 23);
+			this->T11_l15->Size = System::Drawing::Size(190, 30);
 			this->T11_l15->TabIndex = 17;
 			this->T11_l15->Text = L"Phone number:";
 			this->T11_l15->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_InCharge
-			// 
-			this->T11_InCharge->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_InCharge->AutoSize = true;
-			this->T11_InCharge->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_InCharge->Location = System::Drawing::Point(166, 355);
-			this->T11_InCharge->Name = L"T11_InCharge";
-			this->T11_InCharge->Size = System::Drawing::Size(396, 31);
-			this->T11_InCharge->TabIndex = 13;
-			this->T11_InCharge->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			// 
-			// T11_AT
-			// 
-			this->T11_AT->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->T11_AT->AutoSize = true;
-			this->T11_AT->BackColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->T11_AT->Location = System::Drawing::Point(166, 250);
-			this->T11_AT->Name = L"T11_AT";
-			this->T11_AT->Size = System::Drawing::Size(396, 44);
-			this->T11_AT->TabIndex = 12;
-			this->T11_AT->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// T11_StatusCB
 			// 
@@ -1823,11 +1802,22 @@ private: System::Windows::Forms::ComboBox^  T11_StatusCB;
 				L"new", L"In progress", L"Escalation", L"Suspended",
 					L"Closed"
 			});
-			this->T11_StatusCB->Location = System::Drawing::Point(163, 296);
+			this->T11_StatusCB->Location = System::Drawing::Point(163, 324);
 			this->T11_StatusCB->Margin = System::Windows::Forms::Padding(0);
 			this->T11_StatusCB->Name = L"T11_StatusCB";
 			this->T11_StatusCB->Size = System::Drawing::Size(402, 27);
 			this->T11_StatusCB->TabIndex = 14;
+			// 
+			// T11_AT
+			// 
+			this->T11_AT->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->T11_AT->Location = System::Drawing::Point(166, 253);
+			this->T11_AT->Name = L"T11_AT";
+			this->T11_AT->Size = System::Drawing::Size(396, 66);
+			this->T11_AT->TabIndex = 16;
+			this->T11_AT->Text = L"";
 			// 
 			// MyForm
 			// 
@@ -1924,12 +1914,14 @@ bool Verify_ID_and_Password()
 	{
 		while (getline(myfile, line)) //write line by line into the string "line"
 		{
+			getline(myfile, line);
 			flag = line.substr(line.find(':') + 1, line.length());
 			if (CheckID(Id, flag) == true) //Checks if the user is already existing in the program
 			{
 				getline(myfile, line);
 				/*		flag = line.substr(line.find(':') + 1, line.length())
 				name = flag;*/
+				getline(myfile, line);
 				getline(myfile, line);
 				getline(myfile, line);
 				getline(myfile, line);
@@ -1947,6 +1939,14 @@ bool Verify_ID_and_Password()
 						myfile.close();
 						return false;
 					}
+			}
+			else
+			{
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line); 
+				getline(myfile, line);
+				getline(myfile, line);
 			}
 		}
 		myfile.close();
@@ -1972,14 +1972,14 @@ bool CheckPassword()
 		MarshalString(T2_TBPW->Text, password);
 	else if (TabCon->SelectedIndex == 3)
 		MarshalString(T4_TBPW->Text, password);
-	while (password.length() < 8)
+	if (password.length() < 8)
 	{
 		//cout << "Your password is too short,please try again" << endl;
 		//cin >> password;
 		MessageBox::Show("Your password is too short,please try again");
 		return false;
 	}
-	while (password.length() > 8)
+	if (password.length() > 8)
 	{
 		MessageBox::Show("Your password is too long,please try again");
 
@@ -1987,7 +1987,7 @@ bool CheckPassword()
 		//cin >> password;
 		return false;
 	}
-	while (!(password.find("!") == string::npos) || !(password.find("@") == string::npos) || !(password.find("#") == string::npos) || !(password.find("$") == string::npos) || !(password.find("%") == string::npos) || !(password.find("^") == string::npos) || !(password.find("&") == string::npos) || !(password.find("*") == string::npos) || !(password.find("(") == string::npos) || !(password.find(")") == string::npos) || !(password.find("-") == string::npos) || !(password.find("+") == string::npos) || !(password.find("_") == string::npos) || !(password.find("=") == string::npos) || !(password.find(".") == string::npos) || !(password.find("[") == string::npos) || !(password.find("]") == string::npos))
+	if (!(password.find("!") == string::npos) || !(password.find("@") == string::npos) || !(password.find("#") == string::npos) || !(password.find("$") == string::npos) || !(password.find("%") == string::npos) || !(password.find("^") == string::npos) || !(password.find("&") == string::npos) || !(password.find("*") == string::npos) || !(password.find("(") == string::npos) || !(password.find(")") == string::npos) || !(password.find("-") == string::npos) || !(password.find("+") == string::npos) || !(password.find("_") == string::npos) || !(password.find("=") == string::npos) || !(password.find(".") == string::npos) || !(password.find("[") == string::npos) || !(password.find("]") == string::npos))
 	{
 		MessageBox::Show("You have selected a password that contains a bad character, please try again");
 
@@ -2030,7 +2030,6 @@ private: System::Void T4_ButtonF_Click(System::Object^  sender, System::EventArg
 		TabCon->SelectedIndex = 2;
 		m_id = gcnew String(user.c_str());
 		MessageBox::Show("User has been registered in our system ! :)");
-
 	}
 }
 bool Create_User(string New_User)
@@ -2045,12 +2044,33 @@ bool Create_User(string New_User)
 		{
 			HOLD.append(line);
 			HOLD.append("\n");
+			getline(myfile, line);
+			HOLD.append(line);
+			HOLD.append("\n");
 			flag = line.substr(line.find(':') + 1, line.length());
+			getline(myfile, line);
+			HOLD.append(line);
+			HOLD.append("\n");
+			getline(myfile, line);
+			HOLD.append(line);
+			HOLD.append("\n");
 			if (CheckID(New_User, flag) == true) //Checks if the user is already existing in the program
 			{
 				myfile.close();
 				MessageBox::Show("The ID is already existing in the system");
 				return false;
+			}
+			else
+			{			
+				getline(myfile, line);
+				HOLD.append(line);
+				HOLD.append("\n");
+				getline(myfile, line);
+				HOLD.append(line);
+				HOLD.append("\n");
+				getline(myfile, line);
+				HOLD.append(line);
+				HOLD.append("\n");
 			}
 		}
 		if (!Register(New_User, HOLD))//Register a new user
@@ -2067,24 +2087,24 @@ bool Register(string New_User, string hold)
 {
 	int i = 0;
 	string temp, temp1;
-	string ID = "ID:", Name = "Full Name:", Email = "Email:", PhoneNum = "Phone Number:", Pass = "Password:";
-	ofstream myfile("New.txt");
-	if (CheckPassword()) // check if the password that chose by the user is under our conditions
+	string ID = "ID:", Name = "Full Name:", Email = "Email:", PhoneNum = "Phone Number:", Pass = "Password:",Depart="Department:";
+
+	if (CheckPassword() == false) // check if the password that chose by the user is under our conditions
 	{
-		myfile.close();
-		MessageBox::Show("Invalid Password,try again");
+		//myfile.close();
 		return false;
 	}
 	MarshalString(T4_TBE->Text, temp);
 	if (CheckEmail(temp, hold) == true) //checks if the email is Under our conditions
 	{
-		myfile.close();
+	//	myfile.close();
 		MessageBox::Show("Invalid email,try again");
 		return false;
 	}
+	ofstream myfile("New.txt");
 	if (myfile.is_open())
 	{
-
+		//ADDD DEPARTMENT FFS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		myfile << hold; //enter the content of the file that was open before into a new file
 		myfile << "------------------------------------------\n";
 		myfile << ID;
@@ -2105,6 +2125,10 @@ bool Register(string New_User, string hold)
 		temp = PhonePrefix(T4_CB->SelectedIndex); //chose the prefix of the user phone
 		MarshalString(T4_TBPN->Text, temp1);
 		temp.append(temp1);
+		myfile << temp;
+		myfile << "\n";
+		myfile << Depart;
+		MarshalString(T4_TBD->Text, temp);
 		myfile << temp;
 		myfile << "\n";
 		myfile << Pass;	
@@ -2160,6 +2184,7 @@ string PhonePrefix(int prefix)
 }
 private: System::Void T3_NTbutton_Click(System::Object^  sender, System::EventArgs^  e) {
 	TabCon->SelectedIndex = 4;
+	TS_BackUser->Visible = true;
 }
 private: System::Void T5_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (T5_CB->SelectedIndex == -1 || T5_RTB->Text == "")
@@ -2168,7 +2193,6 @@ private: System::Void T5_Button_Click(System::Object^  sender, System::EventArgs
 	}
 	else
 	{
-		//NEED HELP
 		string user;
 		MarshalString(m_id, user);
 		create_new_ticket(user);
@@ -2182,6 +2206,7 @@ void update_database(string id, string subject, string status, string date, stri
 	string line;
 
 	ofstream tickets("ticket_database.txt", ofstream::out | ofstream::app);
+	//tickets
 	tickets << "------------------------------------------" << endl;
 	tickets << "ID:" << id << endl;
 	tickets << "Subject:" << subject << endl;
@@ -2256,6 +2281,7 @@ string getTimeStr() //date & time function
 private: System::Void T3_UHbutton_Click(System::Object^  sender, System::EventArgs^  e) {
 	TabCon->SelectedIndex = 5;
 	ShortLabel->Text = "User History";
+	TS_BackUser->Visible = true;
 	string user;
 	MarshalString(m_id, user);
 	User_tickets_history(user, 4);
@@ -2353,6 +2379,16 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				}
 
 			}
+			else
+			{
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+			}
 
 		}
 		if (flag == 0)
@@ -2426,6 +2462,16 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				}
 
 			}
+			else
+			{
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+			}
 		}
 		if (flag == 0)
 		{
@@ -2485,6 +2531,16 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				}
 
 			}
+			else
+			{
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+			}
 		}
 		if (flag == 0)
 		{
@@ -2533,8 +2589,16 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 			//	T6_DGV->AutoResizeColumns(DataGridViewAutoSizeColumnsMode::Fill);
 				
 				//cout << "ID: " << id << "\tSubject: " << subject << "\tstatus: " << status << "\tDate: " << date << "\tdescription: " << description << endl;
-
-
+			}
+			else
+			{
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);
+				getline(tickets, line);			
 			}
 		}
 		T6_DGV->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
@@ -2621,8 +2685,8 @@ int get_new_ticket_number()
 		getline(tickets, line);
 		getline(tickets, line);
 		getline(tickets, line);
-		getline(tickets, line);
 		last1 = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
 		getline(tickets, line);
 	}
 	last = atoi(last1.c_str());
@@ -2639,13 +2703,26 @@ string GetName(string E_User)
 	{
 		while (getline(myfile, line)) //write line by line into the string "line"
 		{
+			getline(myfile, line);
 			flag = line.substr(line.find(':') + 1, line.length());
 			if (CheckID(E_User, flag) == true) //Checks if the user is already existing in the program
 			{
 				getline(myfile, line);
 				flag = line.substr(line.find(':') + 1, line.length());
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
 				myfile.close();
 				return flag;
+			}
+			else
+			{
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
 			}
 		}
 		myfile.close();
@@ -2999,6 +3076,11 @@ void tech_filter(string Filter,int Choice)
 	string Profession=GetTechnicianProfession(id);
 	ifstream tickets;
 	tickets.open("ticket_database.txt");
+	if (m_TecTable->Rows->Count > 0)
+	{
+		m_TecTable->Rows->Clear();
+		T9_DGV->Refresh();
+	}
 
 //	cout << "Filter by:" << endl;
 //	while (choise < 1 || choise > 4)
@@ -3022,7 +3104,6 @@ void tech_filter(string Filter,int Choice)
 
 				while (getline(tickets, line))
 				{
-					getline(tickets, line);
 					id1 = line.substr(line.find(':') + 1, line.length());
 					if (id1 == Filter) //Checks if the user is already existing in the program
 					{
@@ -3055,7 +3136,7 @@ void tech_filter(string Filter,int Choice)
 
 			}
 
-			case 2://[2]  filter by status
+			case 4://[4]  filter by status
 			{
 				int flag = 0;
 				string status1;
@@ -3139,7 +3220,7 @@ void tech_filter(string Filter,int Choice)
 				break;
 			}
 
-			case 4://[4]  Urgency
+			case 2://[2]  Urgency
 			{
 				while (getline(tickets, line))
 				{
@@ -3214,16 +3295,191 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 	}
 	else
 	{
-		///FIX HERHERHEHRHERHREHERe!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		string id;
 		MarshalString(m_id, id);
-		switch (T6_CB->SelectedIndex)
-		{
-		case 0:User_tickets_history(id, 1);	break;
-		case 1:User_tickets_history(id, 2);	break;
-		case 2:User_tickets_history(id, 3); break;
-		}
+		string Filter;
+		MarshalString(T9_TBSearch->Text,Filter);
+		tech_filter(Filter, T9_CBF->SelectedIndex);
 	}
+}
+private: System::Void T9_RButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	string id;
+	MarshalString(m_id, id);
+	Technician_ticket_view(id);
+}
+private: System::Void T9_DGV_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+	TabCon->SelectedIndex = 10;
+	ShortLabel->Text = "Ticket Review";
+	T11_StatusCB->Enabled = true;
+	T11_UrgencyCB->Enabled = true;
+	T11_AT->ReadOnly = false;
+	if (e->RowIndex != -1)
+	{
+		int Rindex = e->RowIndex;
+		DataRow^ dr= m_TecTable->Rows[Rindex];
+		string Tn;
+		MarshalString( dr["Ticket Number"]->ToString(),Tn);
+		FillTicketReview(Tn);
+	}
+
+}
+void FillTicketReview(string TicketID)
+{
+
+	int ticket_number1=stoi(TicketID);
+	ifstream tickets;
+	tickets.open("ticket_database.txt");
+	
+	string subject, description, date, status, ticket_number, tech_notice;
+	string line;
+	string id1;
+	string Urgency;
+
+	while (getline(tickets, line))
+	{
+		getline(tickets, line);
+		id1 = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		subject = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		status = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		date = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		description = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		ticket_number = line.substr(line.find(':') + 1, line.length());
+		int TN = stoi(ticket_number);
+		getline(tickets, line);
+		Urgency = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		tech_notice = line.substr(line.find(':') + 1, line.length());
+
+
+		if (TN == ticket_number1)
+		{
+			String^ nSubject = gcnew String(subject.c_str());
+			String^ nStatus = gcnew String(status.c_str());
+			string FullName = GetName(id1);
+			String^ UserName = gcnew String(FullName.c_str());
+			String^ GUrgency = gcnew String(Urgency.c_str());
+			String^ nDescription = gcnew String(description.c_str());
+			String^ nAt = gcnew String(tech_notice.c_str());
+			String^ nTN = gcnew String(ticket_number.c_str());
+
+			T11_TNlabel->Text = nTN;
+			std::stringstream ss(date);
+			std::vector<int> output;
+			int i;
+			while (ss >> i) {
+				output.push_back(i);
+				ss.ignore(1);
+			}
+			int s = stoi(ticket_number);
+
+			int iId = stoi(id1);
+			DateTime^ d = gcnew DateTime(output[2], output[1], output[0]);
+			T11_Date->Text = d->ToShortDateString();
+			T11_Subject->Text = nSubject;
+			T11_Desc -> Text = nDescription;
+			T11_AT->Text = nAt;
+			T11_StatusCB->SelectedIndex = T11_StatusCB->FindStringExact(nStatus);
+			T11_UrgencyCB->SelectedIndex = T11_UrgencyCB->FindStringExact(GUrgency);
+			tickets.close();
+			AddUserDetails(id1);
+			return;
+		}
+
+	}
+	tickets.close();
+
+
+}
+void AddUserDetails(string i_Id)
+{
+	string line;
+	string id1,FullName,Email,PhoneN,Password,Department;
+	ifstream myfile("New.txt");
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line)) //write line by line into the string "line"
+		{
+			getline(myfile, line);
+			id1 = line.substr(line.find(':') + 1, line.length());
+			if (CheckID(i_Id, id1) == true) //Checks if the user is already existing in the program
+			{
+				getline(myfile, line);
+				FullName = line.substr(line.find(':') + 1, line.length());
+				getline(myfile, line);
+				Email = line.substr(line.find(':') + 1, line.length());
+				getline(myfile, line);
+				PhoneN = line.substr(line.find(':') + 1, line.length());
+				getline(myfile, line);
+				Department = line.substr(line.find(':') + 1, line.length());
+				getline(myfile, line);
+				Password = line.substr(line.find(':') + 1, line.length());
+				myfile.close();
+				String^ UserName = gcnew String(FullName.c_str());
+				String^ nid1 = gcnew String(id1.c_str());
+				String^ nEmail = gcnew String(Email.c_str());
+				String^ nPhoneN = gcnew String(PhoneN.c_str());
+				String^ nDepart = gcnew String(Department.c_str());
+
+				T11_FN->Text = UserName;
+				T11_ID->Text = nid1;
+				T11_EMAIL->Text = nEmail;
+				T11_Department->Text = nDepart;
+				T11_PN->Text = nPhoneN;
+				//String^ nAt = gcnew String(tech_notice.c_str());
+			}
+			else
+			{
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+				getline(myfile, line);
+			}
+		}
+		myfile.close();
+	}
+}
+private: System::Void T6_DGV_CellDoubleClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+	TabCon->SelectedIndex = 10;
+	ShortLabel->Text = "Ticket Review";
+	T11_StatusCB->Enabled = false;
+	T11_UrgencyCB->Enabled = false;
+	T11_AT->ReadOnly = true;
+	if (e->RowIndex != -1)
+	{
+		int Rindex = e->RowIndex;
+		DataRow^ dr = m_UserTable->Rows[Rindex];
+		string Tn;
+		MarshalString(dr["Ticket Number"]->ToString(), Tn);
+		FillTicketReview(Tn);
+	}
+}
+private: System::Void T11_Back_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (T11_AT->ReadOnly == false)
+	{
+		TabCon->SelectedIndex = 8;
+		ShortLabel->Text = "Tickets List";
+	}
+	else
+	{
+		TabCon->SelectedIndex = 5;
+		ShortLabel->Text = "User History";
+	}
+}
+private: System::Void T6_RButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	string user;
+	MarshalString(m_id, user);
+	User_tickets_history(user, 4);
+}
+private: System::Void TS_BackUser_Click(System::Object^  sender, System::EventArgs^  e) {
+	TS_BackUser->Visible = false;
+	TabCon->SelectedIndex = 2;
+	ShortLabel->Text = "User Menu";
 }
 };
 }
