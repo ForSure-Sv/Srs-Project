@@ -197,6 +197,13 @@ private: System::Windows::Forms::RichTextBox^  T11_AT;
 private: System::Windows::Forms::Button^  T11_Back;
 private: System::Windows::Forms::Button^  T6_RButton;
 private: System::Windows::Forms::Button^  TS_BackUser;
+private: System::Windows::Forms::DataVisualization::Charting::Chart^  T11_Chart;
+private: System::Windows::Forms::Button^  T10_Update;
+private: System::Windows::Forms::ComboBox^  T10_MCB;
+
+private: System::Windows::Forms::Label^  T10_L3;
+private: System::Windows::Forms::RichTextBox^  T10_RTB;
+private: System::Windows::Forms::Label^  T10_l2;
 
 
 
@@ -269,6 +276,14 @@ private: System::Windows::Forms::Button^  TS_BackUser;
 		void InitializeComponent(void)
 		{
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem1 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
+			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem2 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
+			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem3 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
+			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem4 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Title^  title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->Title = (gcnew System::Windows::Forms::Label());
 			this->ShortBox = (gcnew System::Windows::Forms::GroupBox());
@@ -349,6 +364,12 @@ private: System::Windows::Forms::Button^  TS_BackUser;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->T10_TicketsAn = (gcnew System::Windows::Forms::TabPage());
+			this->T10_Update = (gcnew System::Windows::Forms::Button());
+			this->T10_MCB = (gcnew System::Windows::Forms::ComboBox());
+			this->T10_L3 = (gcnew System::Windows::Forms::Label());
+			this->T10_RTB = (gcnew System::Windows::Forms::RichTextBox());
+			this->T10_l2 = (gcnew System::Windows::Forms::Label());
+			this->T11_Chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->T10_l1 = (gcnew System::Windows::Forms::Label());
 			this->T11_TicketReview = (gcnew System::Windows::Forms::TabPage());
 			this->T11_Back = (gcnew System::Windows::Forms::Button());
@@ -396,6 +417,7 @@ private: System::Windows::Forms::Button^  TS_BackUser;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->T9_DGV))->BeginInit();
 			this->T9_P->SuspendLayout();
 			this->T10_TicketsAn->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->T11_Chart))->BeginInit();
 			this->T11_TicketReview->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->T11_TLP->SuspendLayout();
@@ -1367,11 +1389,114 @@ private: System::Windows::Forms::Button^  TS_BackUser;
 			// T10_TicketsAn
 			// 
 			this->T10_TicketsAn->BackColor = System::Drawing::Color::BlanchedAlmond;
+			this->T10_TicketsAn->Controls->Add(this->T10_Update);
+			this->T10_TicketsAn->Controls->Add(this->T10_MCB);
+			this->T10_TicketsAn->Controls->Add(this->T10_L3);
+			this->T10_TicketsAn->Controls->Add(this->T10_RTB);
+			this->T10_TicketsAn->Controls->Add(this->T10_l2);
+			this->T10_TicketsAn->Controls->Add(this->T11_Chart);
 			this->T10_TicketsAn->Controls->Add(this->T10_l1);
 			this->T10_TicketsAn->Location = System::Drawing::Point(4, 5);
 			this->T10_TicketsAn->Name = L"T10_TicketsAn";
 			this->T10_TicketsAn->Size = System::Drawing::Size(730, 411);
 			this->T10_TicketsAn->TabIndex = 9;
+			// 
+			// T10_Update
+			// 
+			this->T10_Update->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->T10_Update->Location = System::Drawing::Point(687, 363);
+			this->T10_Update->Name = L"T10_Update";
+			this->T10_Update->Size = System::Drawing::Size(40, 39);
+			this->T10_Update->TabIndex = 9;
+			this->T10_Update->Text = L"U";
+			this->T10_Update->UseVisualStyleBackColor = true;
+			this->T10_Update->Click += gcnew System::EventHandler(this, &MyForm::T10_Update_Click);
+			// 
+			// T10_MCB
+			// 
+			this->T10_MCB->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->T10_MCB->FormattingEnabled = true;
+			this->T10_MCB->Location = System::Drawing::Point(133, 83);
+			this->T10_MCB->Name = L"T10_MCB";
+			this->T10_MCB->Size = System::Drawing::Size(121, 27);
+			this->T10_MCB->TabIndex = 8;
+			this->T10_MCB->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::T10_MCB_SelectedIndexChanged);
+			this->T10_MCB->TextUpdate += gcnew System::EventHandler(this, &MyForm::T10_MCB_TextUpdate);
+			this->T10_MCB->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::T10_MCB_KeyPress);
+			// 
+			// T10_L3
+			// 
+			this->T10_L3->AutoSize = true;
+			this->T10_L3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->T10_L3->Location = System::Drawing::Point(7, 85);
+			this->T10_L3->Name = L"T10_L3";
+			this->T10_L3->Size = System::Drawing::Size(120, 22);
+			this->T10_L3->TabIndex = 7;
+			this->T10_L3->Text = L"Select month:";
+			// 
+			// T10_RTB
+			// 
+			this->T10_RTB->Location = System::Drawing::Point(399, 202);
+			this->T10_RTB->Name = L"T10_RTB";
+			this->T10_RTB->Size = System::Drawing::Size(282, 180);
+			this->T10_RTB->TabIndex = 6;
+			this->T10_RTB->Text = L"";
+			// 
+			// T10_l2
+			// 
+			this->T10_l2->AutoSize = true;
+			this->T10_l2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->T10_l2->Location = System::Drawing::Point(399, 177);
+			this->T10_l2->Name = L"T10_l2";
+			this->T10_l2->Size = System::Drawing::Size(114, 22);
+			this->T10_l2->TabIndex = 5;
+			this->T10_l2->Text = L"Conclusions:";
+			// 
+			// T11_Chart
+			// 
+			this->T11_Chart->BackColor = System::Drawing::Color::Transparent;
+			this->T11_Chart->BorderlineColor = System::Drawing::Color::Transparent;
+			chartArea1->BackColor = System::Drawing::Color::Transparent;
+			chartArea1->Name = L"ChartArea1";
+			this->T11_Chart->ChartAreas->Add(chartArea1);
+			legend1->AutoFitMinFontSize = 8;
+			legend1->BackColor = System::Drawing::Color::Transparent;
+			legendItem1->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
+				static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			legendItem1->Name = L"Maintenance";
+			legendItem2->BackGradientStyle = System::Windows::Forms::DataVisualization::Charting::GradientStyle::LeftRight;
+			legendItem2->Color = System::Drawing::Color::Red;
+			legendItem2->Name = L"Grades";
+			legendItem3->Color = System::Drawing::Color::DarkGreen;
+			legendItem3->Name = L"Courses";
+			legendItem4->Color = System::Drawing::Color::DodgerBlue;
+			legendItem4->Name = L"Other";
+			legend1->CustomItems->Add(legendItem1);
+			legend1->CustomItems->Add(legendItem2);
+			legend1->CustomItems->Add(legendItem3);
+			legend1->CustomItems->Add(legendItem4);
+			legend1->Name = L"BySubject";
+			this->T11_Chart->Legends->Add(legend1);
+			this->T11_Chart->Location = System::Drawing::Point(3, 173);
+			this->T11_Chart->Name = L"T11_Chart";
+			this->T11_Chart->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Fire;
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series1->Legend = L"BySubject";
+			series1->Name = L"Series1";
+			series1->YValuesPerPoint = 3;
+			this->T11_Chart->Series->Add(series1);
+			this->T11_Chart->Size = System::Drawing::Size(390, 235);
+			this->T11_Chart->TabIndex = 4;
+			this->T11_Chart->Text = L"chart1";
+			title1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			title1->Name = L"Subject";
+			title1->Text = L"By Subject";
+			this->T11_Chart->Titles->Add(title1);
 			// 
 			// T10_l1
 			// 
@@ -1862,6 +1987,7 @@ private: System::Windows::Forms::Button^  TS_BackUser;
 			this->T9_P->PerformLayout();
 			this->T10_TicketsAn->ResumeLayout(false);
 			this->T10_TicketsAn->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->T11_Chart))->EndInit();
 			this->T11_TicketReview->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -2228,6 +2354,8 @@ void create_new_ticket(string id) //creating new ticket function
 	int ticketNumber = get_new_ticket_number();
 	string tech_notice = "empty";
 	int choice = T5_CB->SelectedIndex;
+	String^ temp = T5_RTB->Text->Replace('\n', '`');
+	MarshalString(temp, description);
 
 	switch (choice)
 	{
@@ -2235,7 +2363,6 @@ void create_new_ticket(string id) //creating new ticket function
 		case 1://[1]  Courses
 		{
 			subject = "Courses";
-			MarshalString(T5_RTB->Text, description);
 			update_database(id, subject, status, date, description, ticketNumber, tech_notice,"Unknown");
 
 			break;
@@ -2245,7 +2372,6 @@ void create_new_ticket(string id) //creating new ticket function
 		{
 			subject = "Grades";
 
-			MarshalString(T5_RTB->Text, description);
 			update_database(id, subject, status, date, description, ticketNumber, tech_notice, "Unknown");
 			break;
 		}
@@ -2254,7 +2380,6 @@ void create_new_ticket(string id) //creating new ticket function
 		{
 			subject = "Maintenance_problem";
 
-			MarshalString(T5_RTB->Text, description);
 			update_database(id, subject, status, date, description, ticketNumber, tech_notice, "Unknown");
 			break;
 		}
@@ -2263,7 +2388,6 @@ void create_new_ticket(string id) //creating new ticket function
 		{
 			subject = "Other";
 
-			MarshalString(T5_RTB->Text, description);
 			update_database(id, subject, status, date, description, ticketNumber, tech_notice, "Unknown");
 			break;
 		}
@@ -2739,9 +2863,34 @@ private: System::Void T8_TLButton_Click(System::Object^  sender, System::EventAr
 
 }
 private: System::Void T8_TAButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	FillComboBox();
 	TabCon->SelectedIndex = 9;
 	ShortLabel->Text = "T-Analysis";
-	TMenuButton->Visible = true;
+	TMenuButton->Visible = true;	
+}
+void FillComboBox()
+{
+	T10_MCB->Items->Clear();
+	ifstream tickets;
+	string flag,line;
+	tickets.open("TicketAnalysis.txt");
+	if (tickets.is_open())
+	{
+		while (getline(tickets, line))
+		{
+			getline(tickets, line);
+			flag = line.substr(line.find(':') + 1, line.length());
+			String^ s = gcnew String(flag.c_str());
+			T10_MCB->Items->Add(s);
+			getline(tickets, line);
+		}
+	}
+	else
+	{
+		MessageBox::Show("No Ticket Descriptions DB!");
+	}
+
+
 }
 private: System::Void TMenuButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	TabCon->SelectedIndex = 7;
@@ -3364,6 +3513,7 @@ void FillTicketReview(string TicketID)
 			String^ UserName = gcnew String(FullName.c_str());
 			String^ GUrgency = gcnew String(Urgency.c_str());
 			String^ nDescription = gcnew String(description.c_str());
+			nDescription= nDescription->Replace('`', '\n');
 			String^ nAt = gcnew String(tech_notice.c_str());
 			String^ nTN = gcnew String(ticket_number.c_str());
 
@@ -3480,6 +3630,158 @@ private: System::Void TS_BackUser_Click(System::Object^  sender, System::EventAr
 	TS_BackUser->Visible = false;
 	TabCon->SelectedIndex = 2;
 	ShortLabel->Text = "User Menu";
+}
+private: System::Void T10_MCB_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	ifstream tickets;
+	string flag, line,flag2;
+	tickets.open("TicketAnalysis.txt");
+	string input;
+	MarshalString(T10_MCB->Text, input);
+	if (tickets.is_open())
+	{
+		while (getline(tickets, line))
+		{
+			getline(tickets, line);
+			flag = line.substr(line.find(':') + 1, line.length());
+			if (flag == input)
+			{
+				getline(tickets, line);
+				flag2 = line.substr(line.find(':') + 1, line.length());
+				String^ s = gcnew String(flag2.c_str());
+				s = s->Replace('`', '\n');
+				T10_RTB->Text = s;
+			}
+			else
+			{
+				getline(tickets, line);
+			}
+		}
+	}
+	else
+	{
+		MessageBox::Show("No Ticket Descriptions DB!");
+	}
+	tickets.close();
+}
+/*bool isDigit(char c)
+{
+	if (c >= '0' && c <= '9')
+		return true;
+	else
+		return false;
+}*/
+private: System::Void T10_MCB_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	if (( e->KeyChar <'0' || e->KeyChar > '9') && (e->KeyChar != '-') && (e->KeyChar != 8))
+	{
+		e->Handled = true;
+	}
+
+}
+private: System::Void T10_MCB_TextUpdate(System::Object^  sender, System::EventArgs^  e) {
+	if (T10_MCB->Text->Length == 7 && T10_MCB->Text[2] == '-')
+	{
+		string temp;
+		MarshalString(T10_MCB->Text, temp);
+		FillAnalysis(temp);
+	}
+}
+void FillAnalysis(string Date)
+{
+	fstream tickets;
+	string flag, line, flag2,Desc="Description:",D="Date:",description;
+	tickets.open("TicketAnalysis.txt", fstream::in| fstream::out|fstream::ate);
+	string input;
+	MarshalString(T10_MCB->Text, input);
+	if (tickets.is_open())
+	{
+		while (getline(tickets, line))
+		{
+			getline(tickets, line);
+			flag = line.substr(line.find(':') + 1, line.length());
+			if (flag == input)
+			{
+				getline(tickets, line);
+				MessageBox::Show("Already In List!");
+				tickets.close();
+				return;
+			}
+			else
+			{
+				getline(tickets, line);
+			}
+		}
+	}
+	else
+	{
+		MessageBox::Show("No Ticket Descriptions DB!");
+	}
+//	tickets.close();
+	tickets.clear();
+//	tickets.open("TicketAnalysis.txt", fstream::out|fstream::app);
+	tickets << endl;
+	tickets << "------------------------------";
+	tickets << endl;
+	tickets << D;
+	tickets << Date;
+	tickets << endl;
+	tickets << Desc;
+	//String^ temp = T10_RTB->Text->Replace('\n', '`');
+	//MarshalString(temp, description);
+	tickets << "None";
+	tickets.close();
+	FillComboBox();
+	String^ s = gcnew String(Date.c_str());
+	T10_MCB->SelectedIndex = T10_MCB->FindStringExact(s);
+	
+	
+}
+private: System::Void T10_Update_Click(System::Object^  sender, System::EventArgs^  e)
+{
+	ifstream tickets;
+	ofstream tickets2;
+	string flag, line, flag2, Desc = "Description:", D = "Date:", description;
+	tickets.open("TicketAnalysis.txt");
+	tickets2.open("temp.txt" , ofstream::trunc);
+
+	string input;
+	MarshalString(T10_MCB->Text, input);
+	if (tickets.is_open())
+	{
+		while (getline(tickets, line))
+		{
+			tickets2 << line << endl;
+
+			getline(tickets, line);
+			tickets2 << line << endl;
+			flag = line.substr(line.find(':') + 1, line.length());
+			if (flag == input)
+			{
+				getline(tickets, line);
+				String^ temp = T10_RTB->Text->Replace('\n', '`');
+				MarshalString(temp, description);
+				tickets2 << Desc;
+				tickets2 << description;
+				tickets2 << endl;
+			}
+			else
+			{
+				getline(tickets, line);
+				tickets2 << line << endl;
+			}
+		}
+	}
+	else
+	{
+		MessageBox::Show("No Ticket Descriptions DB!");
+	}
+	tickets.close();
+	tickets2.close();
+	if (remove("TicketAnalysis.txt") != 0)
+	{
+		MessageBox::Show("Failed!");
+	}
+	rename("temp.txt", "TicketAnalysis.txt");
+
 }
 };
 }
