@@ -27,7 +27,10 @@ namespace CRM {
 		{
 			InitializeComponent();
 			SetUpTables();
-
+			for (int i = 0; i < 4; i++)
+			{
+				m_SubUrgArray[i] = gcnew cli::array<Int32>(4);
+			}
 			//
 			//TODO: Add the constructor code here
 			//
@@ -75,8 +78,12 @@ namespace CRM {
 		T6_DGV->DataSource = m_UserTable;
 		T9_DGV->DataSource = m_TecTable;
 	}
+	
 	private: System::Windows::Forms::Button^  T3_NTbutton;
 	public:
+	private: cli::array<Int32>^ m_SubjectArray=gcnew cli::array<Int32>(4);
+	private: cli::array<Int32>^ m_UrgencyArray = gcnew cli::array<Int32>(4);
+	private: cli::array<cli::array<Int32>^>^ m_SubUrgArray = gcnew cli::array< cli::array<Int32>^ >(4);
 	private: String^ m_id;
 	private: DataTable^ m_UserTable;
 	private: DataTable^ m_TecTable;
@@ -204,6 +211,11 @@ private: System::Windows::Forms::ComboBox^  T10_MCB;
 private: System::Windows::Forms::Label^  T10_L3;
 private: System::Windows::Forms::RichTextBox^  T10_RTB;
 private: System::Windows::Forms::Label^  T10_l2;
+private: System::Windows::Forms::Button^  T11_UButton;
+private: System::Windows::Forms::Panel^  T10_PRB;
+private: System::Windows::Forms::RadioButton^  T10_RB3;
+private: System::Windows::Forms::RadioButton^  T10_RB2;
+private: System::Windows::Forms::RadioButton^  T10_RB1;
 
 
 
@@ -278,12 +290,17 @@ private: System::Windows::Forms::Label^  T10_l2;
 			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
 			System::Windows::Forms::DataVisualization::Charting::Legend^  legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem1 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
-			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem2 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
-			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem3 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
-			System::Windows::Forms::DataVisualization::Charting::LegendItem^  legendItem4 = (gcnew System::Windows::Forms::DataVisualization::Charting::LegendItem());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Legend^  legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
 			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			System::Windows::Forms::DataVisualization::Charting::Title^  title1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
+			System::Windows::Forms::DataVisualization::Charting::Title^  title2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
+			System::Windows::Forms::DataVisualization::Charting::Title^  title3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Title());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->Title = (gcnew System::Windows::Forms::Label());
 			this->ShortBox = (gcnew System::Windows::Forms::GroupBox());
@@ -364,6 +381,10 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->T10_TicketsAn = (gcnew System::Windows::Forms::TabPage());
+			this->T10_PRB = (gcnew System::Windows::Forms::Panel());
+			this->T10_RB3 = (gcnew System::Windows::Forms::RadioButton());
+			this->T10_RB2 = (gcnew System::Windows::Forms::RadioButton());
+			this->T10_RB1 = (gcnew System::Windows::Forms::RadioButton());
 			this->T10_Update = (gcnew System::Windows::Forms::Button());
 			this->T10_MCB = (gcnew System::Windows::Forms::ComboBox());
 			this->T10_L3 = (gcnew System::Windows::Forms::Label());
@@ -372,6 +393,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T11_Chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->T10_l1 = (gcnew System::Windows::Forms::Label());
 			this->T11_TicketReview = (gcnew System::Windows::Forms::TabPage());
+			this->T11_UButton = (gcnew System::Windows::Forms::Button());
 			this->T11_Back = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->T11_TNlabel = (gcnew System::Windows::Forms::Label());
@@ -417,6 +439,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->T9_DGV))->BeginInit();
 			this->T9_P->SuspendLayout();
 			this->T10_TicketsAn->SuspendLayout();
+			this->T10_PRB->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->T11_Chart))->BeginInit();
 			this->T11_TicketReview->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -1389,6 +1412,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			// T10_TicketsAn
 			// 
 			this->T10_TicketsAn->BackColor = System::Drawing::Color::BlanchedAlmond;
+			this->T10_TicketsAn->Controls->Add(this->T10_PRB);
 			this->T10_TicketsAn->Controls->Add(this->T10_Update);
 			this->T10_TicketsAn->Controls->Add(this->T10_MCB);
 			this->T10_TicketsAn->Controls->Add(this->T10_L3);
@@ -1401,10 +1425,56 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T10_TicketsAn->Size = System::Drawing::Size(730, 411);
 			this->T10_TicketsAn->TabIndex = 9;
 			// 
+			// T10_PRB
+			// 
+			this->T10_PRB->Controls->Add(this->T10_RB3);
+			this->T10_PRB->Controls->Add(this->T10_RB2);
+			this->T10_PRB->Controls->Add(this->T10_RB1);
+			this->T10_PRB->Location = System::Drawing::Point(7, 97);
+			this->T10_PRB->Name = L"T10_PRB";
+			this->T10_PRB->Size = System::Drawing::Size(131, 70);
+			this->T10_PRB->TabIndex = 10;
+			// 
+			// T10_RB3
+			// 
+			this->T10_RB3->AutoSize = true;
+			this->T10_RB3->Location = System::Drawing::Point(4, 49);
+			this->T10_RB3->Name = L"T10_RB3";
+			this->T10_RB3->Size = System::Drawing::Size(104, 17);
+			this->T10_RB3->TabIndex = 2;
+			this->T10_RB3->TabStop = true;
+			this->T10_RB3->Text = L"Subject-Urgency";
+			this->T10_RB3->UseVisualStyleBackColor = true;
+			this->T10_RB3->CheckedChanged += gcnew System::EventHandler(this, &MyForm::T10_RB3_CheckedChanged);
+			// 
+			// T10_RB2
+			// 
+			this->T10_RB2->AutoSize = true;
+			this->T10_RB2->Location = System::Drawing::Point(4, 26);
+			this->T10_RB2->Name = L"T10_RB2";
+			this->T10_RB2->Size = System::Drawing::Size(80, 17);
+			this->T10_RB2->TabIndex = 1;
+			this->T10_RB2->TabStop = true;
+			this->T10_RB2->Text = L"By Urgency";
+			this->T10_RB2->UseVisualStyleBackColor = true;
+			this->T10_RB2->CheckedChanged += gcnew System::EventHandler(this, &MyForm::T10_RB2_CheckedChanged);
+			// 
+			// T10_RB1
+			// 
+			this->T10_RB1->AutoSize = true;
+			this->T10_RB1->Location = System::Drawing::Point(4, 3);
+			this->T10_RB1->Name = L"T10_RB1";
+			this->T10_RB1->Size = System::Drawing::Size(76, 17);
+			this->T10_RB1->TabIndex = 0;
+			this->T10_RB1->TabStop = true;
+			this->T10_RB1->Text = L"By Subject";
+			this->T10_RB1->UseVisualStyleBackColor = true;
+			this->T10_RB1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::T10_RB1_CheckedChanged);
+			// 
 			// T10_Update
 			// 
 			this->T10_Update->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->T10_Update->Location = System::Drawing::Point(687, 363);
+			this->T10_Update->Location = System::Drawing::Point(690, 372);
 			this->T10_Update->Name = L"T10_Update";
 			this->T10_Update->Size = System::Drawing::Size(40, 39);
 			this->T10_Update->TabIndex = 9;
@@ -1417,7 +1487,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T10_MCB->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->T10_MCB->FormattingEnabled = true;
-			this->T10_MCB->Location = System::Drawing::Point(133, 83);
+			this->T10_MCB->Location = System::Drawing::Point(129, 71);
 			this->T10_MCB->Name = L"T10_MCB";
 			this->T10_MCB->Size = System::Drawing::Size(121, 27);
 			this->T10_MCB->TabIndex = 8;
@@ -1430,7 +1500,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T10_L3->AutoSize = true;
 			this->T10_L3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->T10_L3->Location = System::Drawing::Point(7, 85);
+			this->T10_L3->Location = System::Drawing::Point(3, 72);
 			this->T10_L3->Name = L"T10_L3";
 			this->T10_L3->Size = System::Drawing::Size(120, 22);
 			this->T10_L3->TabIndex = 7;
@@ -1438,7 +1508,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			// 
 			// T10_RTB
 			// 
-			this->T10_RTB->Location = System::Drawing::Point(399, 202);
+			this->T10_RTB->Location = System::Drawing::Point(452, 228);
 			this->T10_RTB->Name = L"T10_RTB";
 			this->T10_RTB->Size = System::Drawing::Size(282, 180);
 			this->T10_RTB->TabIndex = 6;
@@ -1449,7 +1519,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T10_l2->AutoSize = true;
 			this->T10_l2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->T10_l2->Location = System::Drawing::Point(399, 177);
+			this->T10_l2->Location = System::Drawing::Point(448, 203);
 			this->T10_l2->Name = L"T10_l2";
 			this->T10_l2->Size = System::Drawing::Size(114, 22);
 			this->T10_l2->TabIndex = 5;
@@ -1464,39 +1534,70 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T11_Chart->ChartAreas->Add(chartArea1);
 			legend1->AutoFitMinFontSize = 8;
 			legend1->BackColor = System::Drawing::Color::Transparent;
-			legendItem1->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			legendItem1->Name = L"Maintenance";
-			legendItem2->BackGradientStyle = System::Windows::Forms::DataVisualization::Charting::GradientStyle::LeftRight;
-			legendItem2->Color = System::Drawing::Color::Red;
-			legendItem2->Name = L"Grades";
-			legendItem3->Color = System::Drawing::Color::DarkGreen;
-			legendItem3->Name = L"Courses";
-			legendItem4->Color = System::Drawing::Color::DodgerBlue;
-			legendItem4->Name = L"Other";
-			legend1->CustomItems->Add(legendItem1);
-			legend1->CustomItems->Add(legendItem2);
-			legend1->CustomItems->Add(legendItem3);
-			legend1->CustomItems->Add(legendItem4);
 			legend1->Name = L"BySubject";
+			legend2->BackColor = System::Drawing::Color::Transparent;
+			legend2->Name = L"ByUrgency";
+			legend3->BackColor = System::Drawing::Color::Transparent;
+			legend3->Name = L"SubUrg";
 			this->T11_Chart->Legends->Add(legend1);
+			this->T11_Chart->Legends->Add(legend2);
+			this->T11_Chart->Legends->Add(legend3);
 			this->T11_Chart->Location = System::Drawing::Point(3, 173);
 			this->T11_Chart->Name = L"T11_Chart";
 			this->T11_Chart->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Fire;
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
-			series1->Legend = L"BySubject";
-			series1->Name = L"Series1";
-			series1->YValuesPerPoint = 3;
+			series1->Legend = L"SubUrg";
+			series1->Name = L"Subjects";
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Pie;
+			series2->Enabled = false;
+			series2->Legend = L"ByUrgency";
+			series2->Name = L"Urgency";
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::StackedColumn;
+			series3->Enabled = false;
+			series3->Legend = L"SubUrg";
+			series3->Name = L"Unknown";
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::StackedColumn;
+			series4->Enabled = false;
+			series4->Legend = L"SubUrg";
+			series4->Name = L"Low";
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::StackedColumn;
+			series5->Enabled = false;
+			series5->Legend = L"SubUrg";
+			series5->Name = L"Medium";
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::StackedColumn;
+			series6->Enabled = false;
+			series6->Legend = L"SubUrg";
+			series6->Name = L"High";
 			this->T11_Chart->Series->Add(series1);
-			this->T11_Chart->Size = System::Drawing::Size(390, 235);
+			this->T11_Chart->Series->Add(series2);
+			this->T11_Chart->Series->Add(series3);
+			this->T11_Chart->Series->Add(series4);
+			this->T11_Chart->Series->Add(series5);
+			this->T11_Chart->Series->Add(series6);
+			this->T11_Chart->Size = System::Drawing::Size(450, 235);
 			this->T11_Chart->TabIndex = 4;
-			this->T11_Chart->Text = L"chart1";
 			title1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			title1->Name = L"Subject";
 			title1->Text = L"By Subject";
+			title2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			title2->Name = L"Urgency";
+			title2->Text = L"By Urgency";
+			title2->Visible = false;
+			title3->BackColor = System::Drawing::Color::Transparent;
+			title3->Name = L"SubUrg";
+			title3->Text = L"Subject-Urgency";
+			title3->Visible = false;
 			this->T11_Chart->Titles->Add(title1);
+			this->T11_Chart->Titles->Add(title2);
+			this->T11_Chart->Titles->Add(title3);
 			// 
 			// T10_l1
 			// 
@@ -1514,6 +1615,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 			// T11_TicketReview
 			// 
 			this->T11_TicketReview->BackColor = System::Drawing::Color::BlanchedAlmond;
+			this->T11_TicketReview->Controls->Add(this->T11_UButton);
 			this->T11_TicketReview->Controls->Add(this->T11_Back);
 			this->T11_TicketReview->Controls->Add(this->panel1);
 			this->T11_TicketReview->Controls->Add(this->T11_TLP);
@@ -1521,6 +1623,17 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T11_TicketReview->Name = L"T11_TicketReview";
 			this->T11_TicketReview->Size = System::Drawing::Size(730, 411);
 			this->T11_TicketReview->TabIndex = 10;
+			// 
+			// T11_UButton
+			// 
+			this->T11_UButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->T11_UButton->Location = System::Drawing::Point(663, 352);
+			this->T11_UButton->Name = L"T11_UButton";
+			this->T11_UButton->Size = System::Drawing::Size(64, 55);
+			this->T11_UButton->TabIndex = 3;
+			this->T11_UButton->Text = L"U";
+			this->T11_UButton->UseVisualStyleBackColor = true;
+			this->T11_UButton->Click += gcnew System::EventHandler(this, &MyForm::T11_UButton_Click);
 			// 
 			// T11_Back
 			// 
@@ -1987,6 +2100,8 @@ private: System::Windows::Forms::Label^  T10_l2;
 			this->T9_P->PerformLayout();
 			this->T10_TicketsAn->ResumeLayout(false);
 			this->T10_TicketsAn->PerformLayout();
+			this->T10_PRB->ResumeLayout(false);
+			this->T10_PRB->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->T11_Chart))->EndInit();
 			this->T11_TicketReview->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
@@ -2002,6 +2117,7 @@ private: System::Windows::Forms::Label^  T10_l2;
 #pragma endregion
 private: System::Void loginButton_Click(System::Object^  sender, System::EventArgs^  e) {
 		TabCon->SelectedIndex=1;
+		TMenuButton->Visible = false;
 		ShortLabel->Text = "Login";
 		loginButton->Visible = false;
 		TecButton->Visible = false;
@@ -3462,6 +3578,7 @@ private: System::Void T9_DGV_CellDoubleClick(System::Object^  sender, System::Wi
 	T11_StatusCB->Enabled = true;
 	T11_UrgencyCB->Enabled = true;
 	T11_AT->ReadOnly = false;
+	T11_UButton->Visible = true;
 	if (e->RowIndex != -1)
 	{
 		int Rindex = e->RowIndex;
@@ -3600,6 +3717,7 @@ private: System::Void T6_DGV_CellDoubleClick(System::Object^  sender, System::Wi
 	T11_StatusCB->Enabled = false;
 	T11_UrgencyCB->Enabled = false;
 	T11_AT->ReadOnly = true;
+	T11_UButton->Visible = false;
 	if (e->RowIndex != -1)
 	{
 		int Rindex = e->RowIndex;
@@ -3662,6 +3780,7 @@ private: System::Void T10_MCB_SelectedIndexChanged(System::Object^  sender, Syst
 		MessageBox::Show("No Ticket Descriptions DB!");
 	}
 	tickets.close();
+	FillChartInfo(input);
 }
 /*bool isDigit(char c)
 {
@@ -3718,7 +3837,6 @@ void FillAnalysis(string Date)
 //	tickets.close();
 	tickets.clear();
 //	tickets.open("TicketAnalysis.txt", fstream::out|fstream::app);
-	tickets << endl;
 	tickets << "------------------------------";
 	tickets << endl;
 	tickets << D;
@@ -3728,6 +3846,7 @@ void FillAnalysis(string Date)
 	//String^ temp = T10_RTB->Text->Replace('\n', '`');
 	//MarshalString(temp, description);
 	tickets << "None";
+	tickets << endl;
 	tickets.close();
 	FillComboBox();
 	String^ s = gcnew String(Date.c_str());
@@ -3745,7 +3864,7 @@ private: System::Void T10_Update_Click(System::Object^  sender, System::EventArg
 
 	string input;
 	MarshalString(T10_MCB->Text, input);
-	if (tickets.is_open())
+	if (tickets.is_open() && tickets2.is_open())
 	{
 		while (getline(tickets, line))
 		{
@@ -3782,6 +3901,288 @@ private: System::Void T10_Update_Click(System::Object^  sender, System::EventArg
 	}
 	rename("temp.txt", "TicketAnalysis.txt");
 
+}
+private: System::Void T11_UButton_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+	if (T11_UrgencyCB->SelectedIndex == T11_UrgencyCB->FindStringExact("Unknown") || T11_AT->Text == "empty")
+	{
+		MessageBox::Show("Please fill necessary fields!");
+	}
+	else
+	{
+		UpdateTicketTech();
+	}
+}
+void UpdateTicketTech()
+{
+	ifstream tickets;
+	ofstream tickets2;
+	string subject, description, date, status, ticket_number, tech_notice;
+	string id1;
+	string Urgency;
+	string flag, line, flag2;
+	tickets.open("ticket_database.txt");
+	tickets2.open("temp.txt", ofstream::trunc);
+
+	string input;
+	MarshalString(T10_MCB->Text, input);
+	if (tickets.is_open() && tickets2.is_open())
+	{
+		while (getline(tickets, line))
+		{
+			tickets2 << line << endl;
+
+			getline(tickets, line);
+			id1 = line;
+			getline(tickets, line);
+			subject = line;
+			getline(tickets, line);
+			status = line;
+			getline(tickets, line);
+			date = line;
+			getline(tickets, line);
+			description = line;
+			getline(tickets, line);
+			ticket_number = line.substr(line.find(':') + 1, line.length());
+			getline(tickets, line);
+			Urgency = line;
+			getline(tickets, line);
+			tech_notice = line;
+
+			String^ temp = gcnew String(ticket_number.c_str());
+			if (temp == T11_TNlabel->Text)
+			{
+				tickets2 << id1 << endl;
+				tickets2 << subject << endl;
+				MarshalString(T11_StatusCB->Text, status);
+				tickets2 << "Status:"<< status << endl;
+				tickets2 << date << endl;
+				tickets2 << description << endl;
+				tickets2 << ticket_number << endl;
+				MarshalString(T11_UrgencyCB->Text, Urgency);
+				tickets2 <<"Urgency:"<< Urgency << endl;
+				String^ temp = T11_AT->Text->Replace('\n', '`');
+				MarshalString(temp, tech_notice);
+				tickets2 <<"Technician Notice:" << tech_notice << endl;
+
+			}
+			else
+			{
+				tickets2 << id1 << endl;
+				tickets2 << subject << endl;
+				tickets2 << status << endl;
+				tickets2 << date << endl;
+				tickets2 << description << endl;
+				tickets2 << ticket_number << endl;
+				tickets2 << Urgency << endl;
+				tickets2 << tech_notice << endl;
+			}
+		}
+	}
+	else
+	{
+		MessageBox::Show("No Ticket Descriptions DB!");
+	}
+	tickets.close();
+	tickets2.close();
+	if (remove("ticket_database.txt") != 0)
+	{
+		MessageBox::Show("Failed!");
+	}
+	rename("temp.txt", "ticket_database.txt");
+}
+void FillChartInfo(string Date)
+{
+	for (int i = 0; i < 4; i++)
+	{
+		m_SubjectArray[i] = 0;
+		m_UrgencyArray[i] = 0;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			m_SubUrgArray[i][j] = 0;
+		}
+	}
+	string subject, description, date, status, ticket_number, tech_notice;
+	string line;
+	string id1;
+	string Urgency;
+	Date += ' ';
+	ifstream tickets("ticket_database.txt");
+	while (getline(tickets, line))
+	{
+		getline(tickets, line);
+		id1 = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		subject = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		status = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		date = line.substr(line.find(':') + 1, line.length());
+		date = date.substr(date.find('-') + 1, line.length());
+
+		getline(tickets, line);
+		description = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		ticket_number = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		Urgency = line.substr(line.find(':') + 1, line.length());
+		getline(tickets, line);
+		tech_notice = line.substr(line.find(':') + 1, line.length());
+		if (Date == date)
+		{
+			if ("Maintenance" == subject)
+			{
+				m_SubjectArray[0]++;
+			}
+			else if ("Grades" == subject)
+			{
+				m_SubjectArray[1]++;
+			}
+			else if ("Courses" == subject)
+			{
+				m_SubjectArray[2]++;
+			}
+			else if ("Other" == subject)
+			{
+				m_SubjectArray[3]++;
+			}
+			if ("Unknown" == Urgency)
+			{
+				m_UrgencyArray[0]++;
+				FillMinorArray(subject, 0);
+			}
+			else if ("Low" == Urgency)
+			{
+				m_UrgencyArray[1]++;
+				FillMinorArray(subject, 1);
+			}
+			else if ("Medium" == Urgency)
+			{
+				m_UrgencyArray[2]++;
+				FillMinorArray(subject, 2);
+			}
+			else if ("High" == Urgency)
+			{
+				m_UrgencyArray[3]++;
+				FillMinorArray(subject, 3);
+			}
+		}
+	}
+	cli::array<String^>^ managedArray = gcnew cli::array<String^>(4);
+	managedArray[0] = "Maintenance";
+	managedArray[1] = "Grades";
+	managedArray[2] = "Courses";
+	managedArray[3] = "Other";
+
+	T11_Chart->Series->FindByName("Subjects")->Points->DataBindXY(managedArray,m_SubjectArray);
+	T11_Chart->Series->FindByName("Subjects")["PieLabelStyle"] = "Disabled";
+
+	cli::array<String^>^ managedArray2 = gcnew cli::array<String^>(4);
+	managedArray2[0] = "Unknown";
+	managedArray2[1] = "Low";
+	managedArray2[2] = "Medium";
+	managedArray2[3] = "High";
+	T11_Chart->Series->FindByName("Urgency")->Points->DataBindXY(managedArray2,m_UrgencyArray);
+	T11_Chart->Series->FindByName("Urgency")["PieLabelStyle"] = "Disabled";
+	
+	//T11_Chart->Legends->FindByName("SubUrg")->
+	T11_Chart->Series->FindByName("Unknown")->Points->Clear();
+	T11_Chart->Series->FindByName("Low")->Points->Clear();
+	T11_Chart->Series->FindByName("Medium")->Points->Clear();
+	T11_Chart->Series->FindByName("High")->Points->Clear();
+
+	for (int i = 0; i < 4; i++)
+	{
+		T11_Chart->Series->FindByName("Unknown")->Points->AddXY(managedArray[i], m_SubUrgArray[i][0]);
+		T11_Chart->Series->FindByName("Low")->Points->AddXY(managedArray[i], m_SubUrgArray[i][1]);
+		T11_Chart->Series->FindByName("Medium")->Points->AddXY(managedArray[i], m_SubUrgArray[i][2]);
+		T11_Chart->Series->FindByName("High")->Points->AddXY(managedArray[i], m_SubUrgArray[i][3]);
+	}
+
+
+
+	T10_RB1->Checked = true;
+
+	tickets.close();
+}
+Void FillMinorArray(string Subject,int Sector)
+{
+	if ("Maintenance" == Subject)
+	{
+		m_SubUrgArray[Sector][0]++;
+	}
+	else if ("Grades" == Subject)
+	{
+		m_SubUrgArray[Sector][1]++;
+	}
+	else if ("Courses" == Subject)
+	{
+		m_SubUrgArray[Sector][2]++;
+	}
+	else if ("Other" == Subject)
+	{
+		m_SubUrgArray[Sector][3]++;
+	}
+}
+
+
+
+private: System::Void T10_RB1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
+{
+	if (T10_RB1->Checked)
+	{
+		T11_Chart->Series->FindByName("Subjects")->Enabled = true;
+		T11_Chart->Titles->FindByName("Subject")->Visible = true;
+
+		T11_Chart->Series->FindByName("Unknown")->Enabled = false;
+		T11_Chart->Series->FindByName("Low")->Enabled = false;
+		T11_Chart->Series->FindByName("Medium")->Enabled = false;
+		T11_Chart->Series->FindByName("High")->Enabled = false;
+		T11_Chart->Titles->FindByName("SubUrg")->Visible = false;
+
+		T11_Chart->Series->FindByName("Urgency")->Enabled = false;
+		T11_Chart->Titles->FindByName("Urgency")->Visible = false;
+	}
+}
+private: System::Void T10_RB2_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
+{
+	if (T10_RB2->Checked)
+	{
+		T11_Chart->Series->FindByName("Urgency")->Enabled = true;
+		T11_Chart->Titles->FindByName("Urgency")->Visible = true;
+
+		T11_Chart->Series->FindByName("Unknown")->Enabled = false;
+		T11_Chart->Series->FindByName("Low")->Enabled = false;
+		T11_Chart->Series->FindByName("Medium")->Enabled = false;
+		T11_Chart->Series->FindByName("High")->Enabled = false;
+		T11_Chart->Titles->FindByName("SubUrg")->Visible = false;
+
+		T11_Chart->Series->FindByName("Subjects")->Enabled = false;
+		T11_Chart->Titles->FindByName("Subject")->Visible = false;
+
+	}
+}
+private: System::Void T10_RB3_CheckedChanged(System::Object^  sender, System::EventArgs^  e) 
+{
+	if (T10_RB3->Checked)
+	{
+		T11_Chart->Series->FindByName("Urgency")->Enabled = false;
+		T11_Chart->Titles->FindByName("Urgency")->Visible = false;
+
+
+		T11_Chart->Series->FindByName("Unknown")->Enabled = true;
+		T11_Chart->Series->FindByName("Low")->Enabled = true;
+		T11_Chart->Series->FindByName("Medium")->Enabled = true;
+		T11_Chart->Series->FindByName("High")->Enabled = true;
+		T11_Chart->Titles->FindByName("SubUrg")->Visible = true;
+
+		T11_Chart->Series->FindByName("Subjects")->Enabled = false;
+		T11_Chart->Titles->FindByName("Subject")->Visible = false;
+
+	}
 }
 };
 }

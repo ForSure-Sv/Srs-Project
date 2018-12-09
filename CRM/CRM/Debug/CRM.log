@@ -1,6 +1,6 @@
 ﻿  MyForm.cpp
-c:\users\sagi\documents\עבודות הגשה\gui\srs-project\crm\crm\MyForm.h(2402): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\sagi\documents\עבודות הגשה\gui\srs-project\crm\crm\MyForm.h(2518): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
-c:\users\sagi\documents\עבודות הגשה\gui\srs-project\crm\crm\myform.h(3101): warning C4700: uninitialized local variable 't_n' used
-c:\users\sagi\documents\עבודות הגשה\gui\srs-project\crm\crm\myform.h(3172): warning C4700: uninitialized local variable 't_n' used
+c:\users\sagi\documents\עבודות הגשה\gui\srs-project\crm\crm\myform.h(3217): warning C4700: uninitialized local variable 't_n' used
+c:\users\sagi\documents\עבודות הגשה\gui\srs-project\crm\crm\myform.h(3288): warning C4700: uninitialized local variable 't_n' used
   CRM.vcxproj -> C:\Users\Sagi\Documents\עבודות הגשה\Gui\Srs-Project\CRM\Debug\CRM.exe

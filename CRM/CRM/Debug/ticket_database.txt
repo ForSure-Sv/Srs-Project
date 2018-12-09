@@ -4,8 +4,8 @@ Subject:Courses
 Status:Closed
 Date:04-12-2018 
 Description:adsdasd
-Ticket Number:1
-Urgency:Unknown
+1
+Urgency:Low
 Technician Notice:easy problem
 ------------------------------------------
 ID:203716576
@@ -13,8 +13,8 @@ Subject:Courses
 Status:new
 Date:04-12-2018 
 Description:adsdasd
-Ticket Number:2
-Urgency:Escalation
+2
+Urgency:Low
 Technician Notice:empty
 ------------------------------------------
 ID:203716576
@@ -22,8 +22,8 @@ Subject:Courses
 Status:new
 Date:04-12-2018 
 Description:adsdasd
-Ticket Number:3
-Urgency:Escalation
+3
+Urgency:Medium
 Technician Notice:empty
 ------------------------------------------
 ID:203716576
@@ -31,8 +31,8 @@ Subject:Courses
 Status:new
 Date:04-12-2018 
 Description:adsdasd
-Ticket Number:4
-Urgency:In_Progress
+4
+Urgency:Medium
 Technician Notice:i solved the problem
 ------------------------------------------
 ID:203716576
@@ -40,8 +40,8 @@ Subject:Courses
 Status:In_Progress
 Date:04-12-2018 
 Description:adsdasd
-Ticket Number:5
-Urgency:In_Progress
+5
+Urgency:High
 Technician Notice:empty
 ------------------------------------------
 ID:324201600
@@ -49,8 +49,8 @@ Subject:Grades
 Status:new
 Date:05-12-2018 
 Description:problem with c++ grade
-Ticket Number:6
-Urgency:In_Progress
+6
+Urgency:High
 Technician Notice:empty
 ------------------------------------------
 ID:333168647
@@ -58,8 +58,8 @@ Subject:Grades
 Status:new
 Date:05-12-2018 
 Description:problem with python grade
-Ticket Number:7
-Urgency:In_Progress
+7
+Urgency:High
 Technician Notice:empty
 ------------------------------------------
 ID:954718942
@@ -67,26 +67,26 @@ Subject:Maintenance
 Status:new
 Date:05-12-2018 
 Description:broken keyboard in 324 class
-Ticket Number:8
-Urgency:In_Progress
+8
+Urgency:High
 Technician Notice:empty
 ------------------------------------------
 ID:213841212
 Subject:Maintenance
-Status:new
+Status:Escalation
 Date:05-12-2018 
 Description:broken table in class 554
-Ticket Number:9
-Urgency:In_Progress
-Technician Notice:empty
+9
+Urgency:Medium
+Technician Notice:I DONT KNOW WHAT IS THIS `PROBLEMO
 ------------------------------------------
 ID:770149711
 Subject:Other
 Status:new
 Date:05-12-2018 
 Description:other problem
-Ticket Number:10
-Urgency:Closed
+10
+Urgency:Medium
 Technician Notice:empty
 ------------------------------------------
 ID:205490170
@@ -94,8 +94,8 @@ Subject:Other
 Status:Closed
 Date:05-12-2018 
 Description:other problem #2
-Ticket Number:11
-Urgency:Closed
+11
+Urgency:Unknown
 Technician Notice:empty
 ------------------------------------------
 ID:203716576
@@ -103,17 +103,42 @@ Subject:Grades
 Status:new
 Date:05-12-2018 
 Description:problem with c grade
-Ticket Number:12
+12
 Urgency:Closed
 Technician Notice:empty
 ------------------------------------------
 ID:203716576
 Subject:Maintenance
-Status:new
+Status:Closed
 Date:05-12-2018 
 Description:speaker broken in class 432
-Ticket Number:13
-Urgency:Closed
+13
+Urgency:High
+Technician Notice:HELLO iS there AnyoNE
+------------------------------------------
+ID:324201600
+Subject:Maintenance_problem
+Status:new
+Date:06-12-2018 
+Description:WOWIE
+14
+Urgency:Unknown
 Technician Notice:empty
-
-
+------------------------------------------
+ID:324201600
+Subject:Courses
+Status:new
+Date:06-12-2018 
+Description:WOwie
+15
+Urgency:Unknown
+Technician Notice:empty
+------------------------------------------
+ID:324201600
+Subject:Courses
+Status:new
+Date:06-12-2018 
+Description:sadasdad`asdasd`asdddd
+16
+Urgency:Unknown
+Technician Notice:empty
