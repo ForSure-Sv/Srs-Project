@@ -1,0 +1,7 @@
+﻿  MyForm.cpp
+c:\users\aviadsade\desktop\srs-project-master\srs-project-master\crm\crm\MyForm.h(2518): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
+c:\users\aviadsade\desktop\srs-project-master\srs-project-master\crm\crm\myform.h(3216): warning C4700: uninitialized local variable 't_n' used
+c:\users\aviadsade\desktop\srs-project-master\srs-project-master\crm\crm\myform.h(3287): warning C4700: uninitialized local variable 't_n' used
+  CRM.vcxproj -> C:\Users\AviadSade\Desktop\Srs-Project-master\Srs-Project-master\CRM\Debug\CRM.exe
+  CRM.vcxproj -> C:\Users\AviadSade\Desktop\Srs-Project-master\Srs-Project-master\CRM\Debug\CRM.pdb (Full PDB)

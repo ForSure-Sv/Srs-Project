@@ -1,0 +1,144 @@
+------------------------------------------
+ID:203716576
+Subject:Courses
+Status:Closed
+Date:04-12-2018 
+Description:adsdasd
+1
+Urgency:Low
+Technician Notice:easy problem
+------------------------------------------
+ID:203716576
+Subject:Courses
+Status:new
+Date:04-12-2018 
+Description:adsdasd
+2
+Urgency:Low
+Technician Notice:empty
+------------------------------------------
+ID:203716576
+Subject:Courses
+Status:new
+Date:04-12-2018 
+Description:adsdasd
+3
+Urgency:Medium
+Technician Notice:empty
+------------------------------------------
+ID:203716576
+Subject:Courses
+Status:new
+Date:04-12-2018 
+Description:adsdasd
+4
+Urgency:Medium
+Technician Notice:i solved the problem
+------------------------------------------
+ID:203716576
+Subject:Courses
+Status:In_Progress
+Date:04-12-2018 
+Description:adsdasd
+5
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:324201600
+Subject:Grades
+Status:new
+Date:05-12-2018 
+Description:problem with c++ grade
+6
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:333168647
+Subject:Grades
+Status:new
+Date:05-12-2018 
+Description:problem with python grade
+7
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:954718942
+Subject:Maintenance
+Status:new
+Date:05-12-2018 
+Description:broken keyboard in 324 class
+8
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:213841212
+Subject:Maintenance
+Status:Escalation
+Date:05-12-2018 
+Description:broken table in class 554
+9
+Urgency:Medium
+Technician Notice:I DONT KNOW WHAT IS THIS `PROBLEMO
+------------------------------------------
+ID:770149711
+Subject:Other
+Status:new
+Date:05-12-2018 
+Description:other problem
+10
+Urgency:Medium
+Technician Notice:empty
+------------------------------------------
+ID:205490170
+Subject:Other
+Status:Closed
+Date:05-12-2018 
+Description:other problem #2
+11
+Urgency:Unknown
+Technician Notice:empty
+------------------------------------------
+ID:203716576
+Subject:Grades
+Status:new
+Date:05-12-2018 
+Description:problem with c grade
+12
+Urgency:Closed
+Technician Notice:empty
+------------------------------------------
+ID:203716576
+Subject:Maintenance
+Status:Closed
+Date:05-12-2018 
+Description:speaker broken in class 432
+13
+Urgency:High
+Technician Notice:HELLO iS there AnyoNE
+------------------------------------------
+ID:324201600
+Subject:Maintenance_problem
+Status:new
+Date:06-12-2018 
+Description:WOWIE
+14
+Urgency:Unknown
+Technician Notice:empty
+------------------------------------------
+ID:324201600
+Subject:Courses
+Status:new
+Date:06-12-2018 
+Description:WOwie
+15
+Urgency:Unknown
+Technician Notice:empty
+------------------------------------------
+ID:324201600
+Subject:Courses
+Status:new
+Date:06-12-2018 
+Description:sadasdad`asdasd`asdddd
+16
+Urgency:Unknown
+Technician Notice:empty
