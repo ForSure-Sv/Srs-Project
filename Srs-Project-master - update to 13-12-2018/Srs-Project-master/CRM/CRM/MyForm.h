@@ -2200,7 +2200,7 @@ bool Verify_ID_and_Password()
 bool Verify_Password(string CheckPass, string Pass)
 {
 	{
-		if (CheckPass == Pass)
+		if (atoi(CheckPass.c_str()) == RSHash(Pass.c_str()))
 		{
 			return true;
 		}
@@ -2247,6 +2247,24 @@ bool CheckID(string New_U, string Excist_U)
 	}
 	return false;
 }
+
+unsigned int RSHash(const char* str)
+{
+	unsigned int length = strlen(str);
+	unsigned int b = 378551;
+	unsigned int a = 63689;
+	unsigned int hash = 0;
+	unsigned int i = 0;
+
+	for (i = 0; i < length; ++str, ++i)
+	{
+		hash = hash * a + (*str);
+		a = a * b;
+	}
+
+	return hash;
+}
+
 void MarshalString(String ^ s, string& os) //String ^ to string
 {
 	using namespace Runtime::InteropServices;
@@ -2375,7 +2393,8 @@ bool Register(string New_User, string hold)
 		myfile << "\n";
 		myfile << Pass;	
 		MarshalString(T4_TBPW->Text, temp);
-		myfile << temp;
+		string hashPassword = to_string(RSHash(temp.c_str()));
+		myfile << hashPassword;
 		myfile << "\n";
 		myfile.close();
 		return true;
