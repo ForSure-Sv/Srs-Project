@@ -1,62 +1,62 @@
 ------------------------------------------
-ID:203716576
-Subject:Courses
+ID:324201600
+Subject:Grades
 Status:Closed
-Date:04-12-2018 
-Description:adsdasd
+Date:01-10-2018 
+Description:Problems with score
 1
 Urgency:Low
 Technician Notice:easy problem
 ------------------------------------------
-ID:203716576
-Subject:Courses
+ID:333168647
+Subject:Grades
 Status:new
-Date:04-12-2018 
-Description:adsdasd
+Date:04-10-2018 
+Description:Wrong calculation
 2
 Urgency:Low
 Technician Notice:empty
 ------------------------------------------
-ID:203716576
+ID:954718942
 Subject:Courses
 Status:new
-Date:04-12-2018 
-Description:adsdasd
+Date:07-11-2018 
+Description:I could not impress them
 3
 Urgency:Medium
 Technician Notice:empty
 ------------------------------------------
-ID:203716576
-Subject:Courses
+ID:213841212
+Subject:Maintenance problem
 Status:new
-Date:04-12-2018 
-Description:adsdasd
+Date:08-11-2018 
+Description:There's a problem with the door in room 131
 4
 Urgency:Medium
 Technician Notice:i solved the problem
 ------------------------------------------
-ID:203716576
-Subject:Courses
+ID:770149711
+Subject:Maintenance problem
 Status:In_Progress
-Date:04-12-2018 
-Description:adsdasd
+Date:10-11-2018 
+Description:Problem with a lamp in a lecturers' room
 5
 Urgency:High
-Technician Notice:empty
+Technician Notice:Technician sent
 ------------------------------------------
-ID:324201600
-Subject:Grades
+ID:205490170
+Subject:Other
 Status:new
-Date:05-12-2018 
-Description:problem with c++ grade
+Date:12-11-2018 
+Description:Prices increased in the cafeteria
 6
 Urgency:High
-Technician Notice:empty
+Technician Notice:We will check with the seller
 ------------------------------------------
-ID:333168647
+ID:1548742154
 Subject:Grades
 Status:new
-Date:05-12-2018 
+Date:20-11-2018 
 Description:problem with python grade
 7
 Urgency:High
@@ -65,7 +65,7 @@ Technician Notice:empty
 ID:954718942
 Subject:Maintenance
 Status:new
-Date:05-12-2018 
+Date:21-11-2018 
 Description:broken keyboard in 324 class
 8
 Urgency:High
@@ -74,71 +74,471 @@ Technician Notice:empty
 ID:213841212
 Subject:Maintenance
 Status:Escalation
-Date:05-12-2018 
+Date:30-11-2018 
 Description:broken table in class 554
 9
 Urgency:Medium
-Technician Notice:I DONT KNOW WHAT IS THIS `PROBLEMO
+Technician Notice:One of the employees was sent to class
 ------------------------------------------
 ID:770149711
-Subject:Other
+Subject:Maintenance
 Status:new
 Date:05-12-2018 
-Description:other problem
+Description:A lamp was burned
 10
 Urgency:Medium
-Technician Notice:empty
+Technician Notice:A technician was sent
+
 ------------------------------------------
 ID:205490170
 Subject:Other
 Status:Closed
-Date:05-12-2018 
-Description:other problem #2
+Date:07-12-2018 
+Description:Wet floor
 11
 Urgency:Unknown
-Technician Notice:empty
+Technician Notice:Sent Cleaner
 ------------------------------------------
-ID:203716576
+ID:324202100
+Subject:Grades
+Status:Closed
+Date:08-12-2018 
+Description:The score is not correct
+12
+Urgency:Low
+Technician Notice:easy problem
+------------------------------------------
+ID:333168647
 Subject:Grades
 Status:new
-Date:05-12-2018 
-Description:problem with c grade
-12
-Urgency:Closed
-Technician Notice:empty
-------------------------------------------
-ID:203716576
-Subject:Maintenance
-Status:Closed
-Date:05-12-2018 
-Description:speaker broken in class 432
+Date:09-12-2018 
+Description:Wrong calculation
 13
-Urgency:High
-Technician Notice:HELLO iS there AnyoNE
+Urgency:Low
+Technician Notice:empty
 ------------------------------------------
-ID:324201600
-Subject:Maintenance_problem
+ID:213841212
+Subject:Maintenance problem
 Status:new
-Date:06-12-2018 
-Description:WOWIE
+Date:10-12-2018 
+Description:Not working water
 14
-Urgency:Unknown
-Technician Notice:empty
+Urgency:Medium
+Technician Notice:The technician is on his way
 ------------------------------------------
-ID:324201600
-Subject:Courses
-Status:new
-Date:06-12-2018 
-Description:WOwie
+ID:770149711
+Subject:Maintenance problem
+Status:In_Progress
+Date:11-12-2018 
+Description:Clean dining room
 15
-Urgency:Unknown
+Urgency:High
+Technician Notice:None
+------------------------------------------
+ID:205490170
+Subject:Other
+Status:new
+Date:11-12-2018 
+Description:Prices increased in the cafeteria
+16
+Urgency:High
+Technician Notice:We will check with the seller
+------------------------------------------
+ID:1541342154
+Subject:Grades
+Status:new
+Date:12-12-2018 
+Description:problem with logic grade
+17
+Urgency:High
 Technician Notice:empty
 ------------------------------------------
-ID:324201600
+ID:954712942
+Subject:Maintenance
+Status:new
+Date:13-12-2018 
+Description:The door is broken in class 245
+18
+Urgency:High
+Technician Notice:Technician sent
+------------------------------------------
+ID:213841212
+Subject:Maintenance
+Status:Escalation
+Date:14-12-2018 
+Description:broken table in class 512
+19
+Urgency:Medium
+Technician Notice:Technician sent
+------------------------------------------
+ID:770149711
+Subject:Maintenance
+Status:new
+Date:15-12-2018 
+Description:No air conditioner
+20
+Urgency:Medium
+Technician Notice:A technician was sent
+
+------------------------------------------
+ID:205190170
+Subject:Other
+Status:Closed
+Date:16-12-2018 
+Description:Wet Air-Conditioner
+21
+Urgency:Unknown
+Technician Notice:Sent Cleaner
+------------------------------------------
+ID:324226600
+Subject:Grades
+Status:Closed
+Date:17-12-2018 
+Description:Problems with score in math
+22
+Urgency:Low
+Technician Notice:The lecturer checks
+------------------------------------------
+ID:333161634
+Subject:Grades
+Status:new
+Date:18-12-2018 
+Description:No grade to work
+23
+Urgency:Low
+Technician Notice:check
+------------------------------------------
+ID:954718945
 Subject:Courses
 Status:new
-Date:06-12-2018 
-Description:sadasdad`asdasd`asdddd
-16
-Urgency:Unknown
+Date:19-12-2018 
+Description:I do not have Cross in math
+24
+Urgency:Medium
+Technician Notice:in check
+------------------------------------------
+ID:213841217
+Subject:Maintenance problem
+Status:new
+Date:20-12-2018 
+Description:There's a problem with the door in room 191
+25
+Urgency:Medium
+Technician Notice:i solved the problem
+------------------------------------------
+ID:780149711
+Subject:Maintenance problem
+Status:In_Progress
+Date:21-12-2018 
+Description:Problem with a lamp in a lecturers' room
+26
+Urgency:High
+Technician Notice:Technician sent
+------------------------------------------
+ID:225491170
+Subject:Other
+Status:new
+Date:22-12-2018 
+Description:Prices increased in the cafeteria
+27
+Urgency:High
+Technician Notice:We will check with the seller
+------------------------------------------
+ID:1598742154
+Subject:Grades
+Status:new
+Date:23-12-2018 
+Description:problem with Physics grade
+28
+Urgency:High
 Technician Notice:empty
+------------------------------------------
+ID:154718942
+Subject:Maintenance
+Status:new
+Date:24-12-2018 
+Description:broken keyboard in 354 class
+29
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:213841212
+Subject:Maintenance
+Status:Escalation
+Date:25-12-2018 
+Description:broken table in class 5123
+30
+Urgency:Medium
+Technician Notice:One of the employees was sent to class
+------------------------------------------
+ID:725159711
+Subject:Maintenance
+Status:new
+Date:26-12-2018 
+Description:A lamp was burned
+31
+Urgency:Medium
+Technician Notice:A technician was sent
+
+------------------------------------------
+ID:205414170
+Subject:Other
+Status:Closed
+Date:27-12-2018 
+Description:Class 142 is not clean
+32
+Urgency:Unknown
+Technician Notice:Sent Cleaner
+------------------------------------------
+ID:321281600
+Subject:Grades
+Status:Closed
+Date:28-12-2018 
+Description:Problems with score
+33
+Urgency:Low
+Technician Notice:easy problem
+------------------------------------------
+ID:333164647
+Subject:Grades
+Status:new
+Date:29-12-2018 
+Description:Wrong calculation
+34
+Urgency:Low
+Technician Notice:empty
+------------------------------------------
+ID:914718942
+Subject:Courses
+Status:new
+Date:30-12-2018 
+Description:I could not impress them
+35
+Urgency:Medium
+Technician Notice:empty
+------------------------------------------
+ID:214841212
+Subject:Maintenance problem
+Status:new
+Date:01-01-2019 
+Description:There's a problem with the door in room 131
+36
+Urgency:Medium
+Technician Notice:i solved the problem
+------------------------------------------
+ID:774149711
+Subject:Maintenance problem
+Status:In_Progress
+Date:02-01-2019 
+Description:Problem with a lamp in a lecturers' room
+37
+Urgency:High
+Technician Notice:Technician sent
+------------------------------------------
+ID:205490570
+Subject:Other
+Status:new
+Date:03-01-2019 
+Description:Prices increased in the cafeteria
+38
+Urgency:High
+Technician Notice:We will check with the seller
+------------------------------------------
+ID:1548743154
+Subject:Grades
+Status:new
+Date:04-02-2019
+Description:problem with python grade
+39
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:954718942
+Subject:Maintenance
+Status:new
+Date:05-02-2018 
+Description:broken keyboard in 324 class
+40
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:213841112
+Subject:Maintenance
+Status:Escalation
+Date:06-02-2019 
+Description:broken table in class 554
+41
+Urgency:Medium
+Technician Notice:One of the employees was sent to class
+------------------------------------------
+ID:770249711
+Subject:Maintenance
+Status:new
+Date:07-02-2019 
+Description:A window broke
+42
+Urgency:Medium
+Technician Notice:A technician was sent
+
+------------------------------------------
+ID:205490160
+Subject:Other
+Status:Closed
+Date:08-02-2019  
+Description:Wet floor
+43
+Urgency:Unknown
+Technician Notice:Sent Cleaner
+------------------------------------------
+ID:104201600
+Subject:Grades
+Status:Closed
+Date:09-02-2019 
+Description:Problems with score
+44
+Urgency:Low
+Technician Notice:easy problem
+------------------------------------------
+ID:133161647
+Subject:Grades
+Status:new
+Date:11-02-2019 
+Description:Wrong calculation
+45
+Urgency:Low
+Technician Notice:empty
+------------------------------------------
+ID:951718942
+Subject:Courses
+Status:new
+Date:22-02-2019 
+Description:I could not impress them
+46
+Urgency:Medium
+Technician Notice:empty
+------------------------------------------
+ID:213211212
+Subject:Maintenance problem
+Status:new
+Date:23-02-2019
+Description:There's a problem with the door in room 232
+47
+Urgency:Medium
+Technician Notice:i solved the problem
+------------------------------------------
+ID:770142711
+Subject:Maintenance problem
+Status:In_Progress
+Date:25-02-2019
+Description:Problem with a lamp in a lecturers' room
+48
+Urgency:High
+Technician Notice:Technician sent
+------------------------------------------
+ID:205490190
+Subject:Other
+Status:new
+Date:28-02-2019
+Description:There is no college security
+49
+Urgency:High
+Technician Notice:We will check with the seller
+------------------------------------------
+ID:1542741154
+Subject:Grades
+Status:new
+Date:29-02-2019
+Description:problem with math grade
+50
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:154428942
+Subject:Maintenance
+Status:new
+Date:30-02-2019 
+Description:broken keyboard in 224 class
+51
+Urgency:High
+Technician Notice:empty
+------------------------------------------
+ID:213841212
+Subject:Maintenance
+Status:Escalation
+Date:30-03-2019 
+Description:broken table in class 1000
+52
+Urgency:Medium
+Technician Notice:One of the employees was sent to class
+------------------------------------------
+ID:770149611
+Subject:Maintenance
+Status:new
+Date:01-04-2019  
+Description:A lamp was burned
+53
+Urgency:Medium
+Technician Notice:A technician was sent
+------------------------------------------
+ID:205590110
+Subject:Other
+Status:Closed
+Date:02-04-2019 
+Description:Wet Stairs
+54
+Urgency:Unknown
+Technician Notice:Sent Cleaner
+------------------------------------------
+ID:322201610
+Subject:Grades
+Status:Closed
+Date:04-04-2019 
+Description:Problems with score
+55
+Urgency:Low
+Technician Notice:easy problem
+------------------------------------------
+ID:334168147
+Subject:Grades
+Status:new
+Date:10-04-2019
+Description:Wrong calculation
+56
+Urgency:Low
+Technician Notice:empty
+------------------------------------------
+ID:953418942
+Subject:Courses
+Status:new
+Date:12-04-2019 
+Description:I could not impress them
+57
+Urgency:Medium
+Technician Notice:empty
+------------------------------------------
+ID:213841412
+Subject:Maintenance problem
+Status:new
+Date:13-04-2019 
+Description:There's a problem with the door in room 300
+58
+Urgency:Medium
+Technician Notice:i solved the problem
+------------------------------------------
+ID:773149711
+Subject:Maintenance problem
+Status:In_Progress
+Date:14-04-2019 
+Description:Problem badroom
+59
+Urgency:High
+Technician Notice:Technician sent
+------------------------------------------
+ID:205490170
+Subject:Other
+Status:new
+Date:30-04-2019
+Description:Cat in class
+60
+Urgency:High
+Technician Notice:None
