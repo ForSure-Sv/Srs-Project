@@ -53,7 +53,6 @@ namespace CRM {
 		T6_DGV->ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle::None;
 		T6_DGV->ColumnHeadersDefaultCellStyle->BackColor = Color::FromArgb(20, 25, 72);
 		T6_DGV->ColumnHeadersDefaultCellStyle->ForeColor = Color::White;
-
 		m_TecTable = gcnew DataTable();
 		m_TecTable->Columns->Add("Date", DateTime::typeid);
 		m_TecTable->Columns->Add("Subject", String::typeid);
@@ -76,7 +75,9 @@ namespace CRM {
 		T9_DGV->ColumnHeadersDefaultCellStyle->ForeColor = Color::White;
 
 		T6_DGV->DataSource = m_UserTable;
+		T6_DGV->Columns[0]->DefaultCellStyle->Format = "dd/MM/yyyy";
 		T9_DGV->DataSource = m_TecTable;
+		T9_DGV->Columns[0]->DefaultCellStyle->Format = "dd/MM/yyyy";
 	}
 	
 	private: System::Windows::Forms::Button^  T3_NTbutton;
@@ -681,6 +682,7 @@ private: System::Windows::Forms::RadioButton^  T10_RB1;
 			this->T2_TBID->Size = System::Drawing::Size(138, 20);
 			this->T2_TBID->TabIndex = 5;
 			this->T2_TBID->Text = L"324201600";
+			this->T2_TBID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::T2_TBID_KeyPress);
 			// 
 			// T2_l3
 			// 
@@ -830,6 +832,7 @@ private: System::Windows::Forms::RadioButton^  T10_RB1;
 			this->T4_TBPN->Name = L"T4_TBPN";
 			this->T4_TBPN->Size = System::Drawing::Size(104, 20);
 			this->T4_TBPN->TabIndex = 16;
+			this->T4_TBPN->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::T2_TBID_KeyPress);
 			// 
 			// T4_TBD
 			// 
@@ -851,6 +854,7 @@ private: System::Windows::Forms::RadioButton^  T10_RB1;
 			this->T4_TBID->Name = L"T4_TBID";
 			this->T4_TBID->Size = System::Drawing::Size(161, 20);
 			this->T4_TBID->TabIndex = 13;
+			this->T4_TBID->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::T2_TBID_KeyPress);
 			// 
 			// T4_TBLN
 			// 
@@ -1211,6 +1215,7 @@ private: System::Windows::Forms::RadioButton^  T10_RB1;
 			this->T7_TBUN->Name = L"T7_TBUN";
 			this->T7_TBUN->Size = System::Drawing::Size(132, 20);
 			this->T7_TBUN->TabIndex = 6;
+			this->T7_TBUN->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::T2_TBID_KeyPress);
 			// 
 			// T7_l3
 			// 
@@ -2748,7 +2753,7 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 		//cout << "Enter Date [DD-MM-YYYY]" << endl;
 		//cin >> date1;
 		MarshalString(T6_TBS->Text, date1);
-		
+		date1 += " ";
 		while (getline(tickets, line))
 		{
 			getline(tickets, line);
@@ -2770,7 +2775,7 @@ void User_tickets_history(string id,int Choice) //show user ticket's history
 				getline(tickets, line);
 				tech_notice = line.substr(line.find(':') + 1, line.length());
 				
-				if (date.find(date1) != std::string::npos)
+				if (date == date1)
 				{
 					String^ nSubject = gcnew String(subject.c_str());
 					String^ nStatus = gcnew String(status.c_str());
@@ -3819,7 +3824,12 @@ private: System::Void T10_MCB_TextUpdate(System::Object^  sender, System::EventA
 	{
 		string temp;
 		MarshalString(T10_MCB->Text, temp);
-		FillAnalysis(temp);
+		string x = temp.substr(0, 2);
+		int f = stoi(x);
+		if(f>12)
+			MessageBox::Show("No such Month!");
+		else
+			FillAnalysis(temp);
 	}
 }
 void FillAnalysis(string Date)
@@ -4200,6 +4210,13 @@ private: System::Void T10_RB3_CheckedChanged(System::Object^  sender, System::Ev
 		T11_Chart->Series->FindByName("Subjects")->Enabled = false;
 		T11_Chart->Titles->FindByName("Subject")->Visible = false;
 
+	}
+}
+
+private: System::Void T2_TBID_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	if ((e->KeyChar <'0' || e->KeyChar > '9') && (e->KeyChar != 8))
+	{
+		e->Handled = true;
 	}
 }
 };
